@@ -1,0 +1,10 @@
+{
+  "owner": "zzw",
+  "method_id": "zzw-uniform-starter",
+  "policy_path": "agents/zzw/policy.py",
+  "status": "template_not_run",
+  "parent_method": "uniform_selector",
+  "hypothesis_id": null,
+  "fidelity": "smoke",
+  "note": "Shared benchmark config applies; no training has been run."
+}

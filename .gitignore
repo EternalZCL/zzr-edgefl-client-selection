@@ -1,0 +1,39 @@
+# Python / local environments
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Machine-specific / credentials
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
+
+# Data, model weights and local working results
+data/raw/**
+!data/raw/README.md
+data/processed/**
+!data/processed/README.md
+artifacts/**
+!artifacts/README.md
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.npz
+*.npy
+
+# Temporary writes
+*.tmp

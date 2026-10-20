@@ -1,0 +1,1510 @@
+{
+  "status": "passed",
+  "purpose": "real_hapt_short_pipeline_validation",
+  "created_at_utc": "2026-10-20T08:51:00.234951+00:00",
+  "checks": {
+    "real_hapt_30_clients": true,
+    "zero_raw_window_overlap": true,
+    "all_clients_have_six_class_train_validation_test_support": true,
+    "search_validation_only_20_clients": true,
+    "reserved_evaluation_rejected": true,
+    "main_round_cap_reached": true,
+    "all_four_scenarios_ran": true,
+    "all_four_workspace_policies_ran": true,
+    "fedprox_ran": true,
+    "checkpoint_weights_exact": true,
+    "checkpoint_selection_time_bytes_trace_exact": true,
+    "checkpoint_client_rng_exact": true,
+    "budget_stops_before_first_local_update": true,
+    "communication_serialization_counted": true,
+    "fixed_local_steps_counted": true,
+    "all_clients_participated_in_warmup": true
+  },
+  "main_run": {
+    "purpose": "short_federated_pipeline_validation",
+    "method": "fedavg_u",
+    "scenario": "natural_heterogeneous",
+    "completed_rounds": 8,
+    "stop_reason": "round_cap",
+    "sim_seconds_used": 0.7993923266779851,
+    "budget_sim_seconds": 10.0,
+    "up_bytes": 784752,
+    "down_bytes": 784752,
+    "training_steps": 192,
+    "wall_seconds": 0.5859799000318162,
+    "initial_mean_client_macro_f1": 0.08090956552820261,
+    "mean_client_macro_f1": 0.6406977261227328,
+    "evaluation_scope": "search_validation",
+    "validation_clients": 20,
+    "per_client_metrics": [
+      {
+        "client_id": 2,
+        "support": 34,
+        "macro_f1": 0.7334554334554335,
+        "accuracy": 0.7352941176470589
+      },
+      {
+        "client_id": 3,
+        "support": 38,
+        "macro_f1": 0.9444444444444445,
+        "accuracy": 0.9473684210526315
+      },
+      {
+        "client_id": 5,
+        "support": 34,
+        "macro_f1": 0.6316137566137566,
+        "accuracy": 0.6470588235294118
+      },
+      {
+        "client_id": 7,
+        "support": 34,
+        "macro_f1": 0.6537037037037037,
+        "accuracy": 0.6764705882352942
+      },
+      {
+        "client_id": 8,
+        "support": 33,
+        "macro_f1": 0.5179894179894179,
+        "accuracy": 0.5757575757575758
+      },
+      {
+        "client_id": 10,
+        "support": 35,
+        "macro_f1": 0.35353535353535354,
+        "accuracy": 0.3142857142857143
+      },
+      {
+        "client_id": 11,
+        "support": 40,
+        "macro_f1": 0.623776786820265,
+        "accuracy": 0.7
+      },
+      {
+        "client_id": 12,
+        "support": 41,
+        "macro_f1": 0.5571895424836601,
+        "accuracy": 0.6341463414634146
+      },
+      {
+        "client_id": 13,
+        "support": 34,
+        "macro_f1": 0.5387799564270153,
+        "accuracy": 0.5882352941176471
+      },
+      {
+        "client_id": 14,
+        "support": 38,
+        "macro_f1": 0.7305764411027568,
+        "accuracy": 0.7631578947368421
+      },
+      {
+        "client_id": 18,
+        "support": 43,
+        "macro_f1": 0.6697984749455337,
+        "accuracy": 0.7441860465116279
+      },
+      {
+        "client_id": 19,
+        "support": 43,
+        "macro_f1": 0.34920634920634913,
+        "accuracy": 0.4186046511627907
+      },
+      {
+        "client_id": 20,
+        "support": 41,
+        "macro_f1": 0.7517898767898767,
+        "accuracy": 0.8048780487804879
+      },
+      {
+        "client_id": 21,
+        "support": 47,
+        "macro_f1": 0.861111111111111,
+        "accuracy": 0.9148936170212766
+      },
+      {
+        "client_id": 24,
+        "support": 44,
+        "macro_f1": 0.7217412217412217,
+        "accuracy": 0.7272727272727273
+      },
+      {
+        "client_id": 25,
+        "support": 49,
+        "macro_f1": 0.7040882509303562,
+        "accuracy": 0.7551020408163265
+      },
+      {
+        "client_id": 27,
+        "support": 49,
+        "macro_f1": 0.6948051948051948,
+        "accuracy": 0.6938775510204082
+      },
+      {
+        "client_id": 28,
+        "support": 41,
+        "macro_f1": 0.7261904761904763,
+        "accuracy": 0.8048780487804879
+      },
+      {
+        "client_id": 29,
+        "support": 39,
+        "macro_f1": 0.5333333333333333,
+        "accuracy": 0.6153846153846154
+      },
+      {
+        "client_id": 30,
+        "support": 42,
+        "macro_f1": 0.5168253968253969,
+        "accuracy": 0.5476190476190477
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "purpose": "short_federated_pipeline_validation",
+      "method": "fedavg_u",
+      "scenario": "near_iid_homogeneous",
+      "completed_rounds": 6,
+      "stop_reason": "round_cap",
+      "sim_seconds_used": 0.22787612655716608,
+      "budget_sim_seconds": 10.0,
+      "up_bytes": 588564,
+      "down_bytes": 588564,
+      "training_steps": 144,
+      "wall_seconds": 0.4693280000356026,
+      "initial_mean_client_macro_f1": 0.08090956552820261,
+      "mean_client_macro_f1": 0.62806740732742,
+      "evaluation_scope": "search_validation",
+      "validation_clients": 20,
+      "per_client_metrics": [
+        {
+          "client_id": 2,
+          "support": 34,
+          "macro_f1": 0.5763772175536882,
+          "accuracy": 0.6764705882352942
+        },
+        {
+          "client_id": 3,
+          "support": 38,
+          "macro_f1": 0.9463869463869464,
+          "accuracy": 0.9473684210526315
+        },
+        {
+          "client_id": 5,
+          "support": 34,
+          "macro_f1": 0.6240287490287489,
+          "accuracy": 0.6470588235294118
+        },
+        {
+          "client_id": 7,
+          "support": 34,
+          "macro_f1": 0.6821011232775938,
+          "accuracy": 0.7058823529411765
+        },
+        {
+          "client_id": 8,
+          "support": 33,
+          "macro_f1": 0.5538720538720538,
+          "accuracy": 0.6060606060606061
+        },
+        {
+          "client_id": 10,
+          "support": 35,
+          "macro_f1": 0.4659090909090909,
+          "accuracy": 0.5142857142857142
+        },
+        {
+          "client_id": 11,
+          "support": 40,
+          "macro_f1": 0.5947001989201478,
+          "accuracy": 0.675
+        },
+        {
+          "client_id": 12,
+          "support": 41,
+          "macro_f1": 0.5090868196131354,
+          "accuracy": 0.5609756097560976
+        },
+        {
+          "client_id": 13,
+          "support": 34,
+          "macro_f1": 0.41855203619909503,
+          "accuracy": 0.5294117647058824
+        },
+        {
+          "client_id": 14,
+          "support": 38,
+          "macro_f1": 0.6944444444444443,
+          "accuracy": 0.7368421052631579
+        },
+        {
+          "client_id": 18,
+          "support": 43,
+          "macro_f1": 0.6410714285714286,
+          "accuracy": 0.6744186046511628
+        },
+        {
+          "client_id": 19,
+          "support": 43,
+          "macro_f1": 0.4179292929292929,
+          "accuracy": 0.46511627906976744
+        },
+        {
+          "client_id": 20,
+          "support": 41,
+          "macro_f1": 0.6344211344211345,
+          "accuracy": 0.7560975609756098
+        },
+        {
+          "client_id": 21,
+          "support": 47,
+          "macro_f1": 0.9333333333333332,
+          "accuracy": 0.9574468085106383
+        },
+        {
+          "client_id": 24,
+          "support": 44,
+          "macro_f1": 0.7128787878787879,
+          "accuracy": 0.7272727272727273
+        },
+        {
+          "client_id": 25,
+          "support": 49,
+          "macro_f1": 0.7040882509303562,
+          "accuracy": 0.7551020408163265
+        },
+        {
+          "client_id": 27,
+          "support": 49,
+          "macro_f1": 0.7272816583161411,
+          "accuracy": 0.7142857142857143
+        },
+        {
+          "client_id": 28,
+          "support": 41,
+          "macro_f1": 0.7052754435107377,
+          "accuracy": 0.7804878048780488
+        },
+        {
+          "client_id": 29,
+          "support": 39,
+          "macro_f1": 0.4973544973544974,
+          "accuracy": 0.5897435897435898
+        },
+        {
+          "client_id": 30,
+          "support": 42,
+          "macro_f1": 0.5222556390977443,
+          "accuracy": 0.5714285714285714
+        }
+      ]
+    },
+    {
+      "purpose": "short_federated_pipeline_validation",
+      "method": "fedavg_u",
+      "scenario": "near_iid_heterogeneous",
+      "completed_rounds": 6,
+      "stop_reason": "round_cap",
+      "sim_seconds_used": 0.5995442450084888,
+      "budget_sim_seconds": 10.0,
+      "up_bytes": 588564,
+      "down_bytes": 588564,
+      "training_steps": 144,
+      "wall_seconds": 0.46622879995265976,
+      "initial_mean_client_macro_f1": 0.08090956552820261,
+      "mean_client_macro_f1": 0.62806740732742,
+      "evaluation_scope": "search_validation",
+      "validation_clients": 20,
+      "per_client_metrics": [
+        {
+          "client_id": 2,
+          "support": 34,
+          "macro_f1": 0.5763772175536882,
+          "accuracy": 0.6764705882352942
+        },
+        {
+          "client_id": 3,
+          "support": 38,
+          "macro_f1": 0.9463869463869464,
+          "accuracy": 0.9473684210526315
+        },
+        {
+          "client_id": 5,
+          "support": 34,
+          "macro_f1": 0.6240287490287489,
+          "accuracy": 0.6470588235294118
+        },
+        {
+          "client_id": 7,
+          "support": 34,
+          "macro_f1": 0.6821011232775938,
+          "accuracy": 0.7058823529411765
+        },
+        {
+          "client_id": 8,
+          "support": 33,
+          "macro_f1": 0.5538720538720538,
+          "accuracy": 0.6060606060606061
+        },
+        {
+          "client_id": 10,
+          "support": 35,
+          "macro_f1": 0.4659090909090909,
+          "accuracy": 0.5142857142857142
+        },
+        {
+          "client_id": 11,
+          "support": 40,
+          "macro_f1": 0.5947001989201478,
+          "accuracy": 0.675
+        },
+        {
+          "client_id": 12,
+          "support": 41,
+          "macro_f1": 0.5090868196131354,
+          "accuracy": 0.5609756097560976
+        },
+        {
+          "client_id": 13,
+          "support": 34,
+          "macro_f1": 0.41855203619909503,
+          "accuracy": 0.5294117647058824
+        },
+        {
+          "client_id": 14,
+          "support": 38,
+          "macro_f1": 0.6944444444444443,
+          "accuracy": 0.7368421052631579
+        },
+        {
+          "client_id": 18,
+          "support": 43,
+          "macro_f1": 0.6410714285714286,
+          "accuracy": 0.6744186046511628
+        },
+        {
+          "client_id": 19,
+          "support": 43,
+          "macro_f1": 0.4179292929292929,
+          "accuracy": 0.46511627906976744
+        },
+        {
+          "client_id": 20,
+          "support": 41,
+          "macro_f1": 0.6344211344211345,
+          "accuracy": 0.7560975609756098
+        },
+        {
+          "client_id": 21,
+          "support": 47,
+          "macro_f1": 0.9333333333333332,
+          "accuracy": 0.9574468085106383
+        },
+        {
+          "client_id": 24,
+          "support": 44,
+          "macro_f1": 0.7128787878787879,
+          "accuracy": 0.7272727272727273
+        },
+        {
+          "client_id": 25,
+          "support": 49,
+          "macro_f1": 0.7040882509303562,
+          "accuracy": 0.7551020408163265
+        },
+        {
+          "client_id": 27,
+          "support": 49,
+          "macro_f1": 0.7272816583161411,
+          "accuracy": 0.7142857142857143
+        },
+        {
+          "client_id": 28,
+          "support": 41,
+          "macro_f1": 0.7052754435107377,
+          "accuracy": 0.7804878048780488
+        },
+        {
+          "client_id": 29,
+          "support": 39,
+          "macro_f1": 0.4973544973544974,
+          "accuracy": 0.5897435897435898
+        },
+        {
+          "client_id": 30,
+          "support": 42,
+          "macro_f1": 0.5222556390977443,
+          "accuracy": 0.5714285714285714
+        }
+      ]
+    },
+    {
+      "purpose": "short_federated_pipeline_validation",
+      "method": "fedavg_u",
+      "scenario": "natural_homogeneous",
+      "completed_rounds": 6,
+      "stop_reason": "round_cap",
+      "sim_seconds_used": 0.22787612655716608,
+      "budget_sim_seconds": 10.0,
+      "up_bytes": 588564,
+      "down_bytes": 588564,
+      "training_steps": 144,
+      "wall_seconds": 0.6027042000205256,
+      "initial_mean_client_macro_f1": 0.08090956552820261,
+      "mean_client_macro_f1": 0.5526875243846247,
+      "evaluation_scope": "search_validation",
+      "validation_clients": 20,
+      "per_client_metrics": [
+        {
+          "client_id": 2,
+          "support": 34,
+          "macro_f1": 0.5011635423400129,
+          "accuracy": 0.5882352941176471
+        },
+        {
+          "client_id": 3,
+          "support": 38,
+          "macro_f1": 0.8028322440087147,
+          "accuracy": 0.8157894736842105
+        },
+        {
+          "client_id": 5,
+          "support": 34,
+          "macro_f1": 0.5416666666666666,
+          "accuracy": 0.5882352941176471
+        },
+        {
+          "client_id": 7,
+          "support": 34,
+          "macro_f1": 0.5564814814814815,
+          "accuracy": 0.6176470588235294
+        },
+        {
+          "client_id": 8,
+          "support": 33,
+          "macro_f1": 0.5227873977873978,
+          "accuracy": 0.5757575757575758
+        },
+        {
+          "client_id": 10,
+          "support": 35,
+          "macro_f1": 0.46947738252086074,
+          "accuracy": 0.5428571428571428
+        },
+        {
+          "client_id": 11,
+          "support": 40,
+          "macro_f1": 0.6083662714097496,
+          "accuracy": 0.675
+        },
+        {
+          "client_id": 12,
+          "support": 41,
+          "macro_f1": 0.4661506707946336,
+          "accuracy": 0.5609756097560976
+        },
+        {
+          "client_id": 13,
+          "support": 34,
+          "macro_f1": 0.4142008318478907,
+          "accuracy": 0.5294117647058824
+        },
+        {
+          "client_id": 14,
+          "support": 38,
+          "macro_f1": 0.5453912559175716,
+          "accuracy": 0.5789473684210527
+        },
+        {
+          "client_id": 18,
+          "support": 43,
+          "macro_f1": 0.5239651416122004,
+          "accuracy": 0.5813953488372093
+        },
+        {
+          "client_id": 19,
+          "support": 43,
+          "macro_f1": 0.3,
+          "accuracy": 0.3953488372093023
+        },
+        {
+          "client_id": 20,
+          "support": 41,
+          "macro_f1": 0.5724789915966386,
+          "accuracy": 0.7073170731707317
+        },
+        {
+          "client_id": 21,
+          "support": 47,
+          "macro_f1": 0.8292929292929293,
+          "accuracy": 0.8723404255319149
+        },
+        {
+          "client_id": 24,
+          "support": 44,
+          "macro_f1": 0.6628956228956229,
+          "accuracy": 0.6818181818181818
+        },
+        {
+          "client_id": 25,
+          "support": 49,
+          "macro_f1": 0.7040882509303562,
+          "accuracy": 0.7551020408163265
+        },
+        {
+          "client_id": 27,
+          "support": 49,
+          "macro_f1": 0.6677115987460814,
+          "accuracy": 0.673469387755102
+        },
+        {
+          "client_id": 28,
+          "support": 41,
+          "macro_f1": 0.39095405399753225,
+          "accuracy": 0.4146341463414634
+        },
+        {
+          "client_id": 29,
+          "support": 39,
+          "macro_f1": 0.5333333333333333,
+          "accuracy": 0.6153846153846154
+        },
+        {
+          "client_id": 30,
+          "support": 42,
+          "macro_f1": 0.44051282051282054,
+          "accuracy": 0.47619047619047616
+        }
+      ]
+    },
+    {
+      "purpose": "short_federated_pipeline_validation",
+      "method": "fedavg_u",
+      "scenario": "natural_heterogeneous",
+      "completed_rounds": 8,
+      "stop_reason": "round_cap",
+      "sim_seconds_used": 0.7993923266779851,
+      "budget_sim_seconds": 10.0,
+      "up_bytes": 784752,
+      "down_bytes": 784752,
+      "training_steps": 192,
+      "wall_seconds": 0.5859799000318162,
+      "initial_mean_client_macro_f1": 0.08090956552820261,
+      "mean_client_macro_f1": 0.6406977261227328,
+      "evaluation_scope": "search_validation",
+      "validation_clients": 20,
+      "per_client_metrics": [
+        {
+          "client_id": 2,
+          "support": 34,
+          "macro_f1": 0.7334554334554335,
+          "accuracy": 0.7352941176470589
+        },
+        {
+          "client_id": 3,
+          "support": 38,
+          "macro_f1": 0.9444444444444445,
+          "accuracy": 0.9473684210526315
+        },
+        {
+          "client_id": 5,
+          "support": 34,
+          "macro_f1": 0.6316137566137566,
+          "accuracy": 0.6470588235294118
+        },
+        {
+          "client_id": 7,
+          "support": 34,
+          "macro_f1": 0.6537037037037037,
+          "accuracy": 0.6764705882352942
+        },
+        {
+          "client_id": 8,
+          "support": 33,
+          "macro_f1": 0.5179894179894179,
+          "accuracy": 0.5757575757575758
+        },
+        {
+          "client_id": 10,
+          "support": 35,
+          "macro_f1": 0.35353535353535354,
+          "accuracy": 0.3142857142857143
+        },
+        {
+          "client_id": 11,
+          "support": 40,
+          "macro_f1": 0.623776786820265,
+          "accuracy": 0.7
+        },
+        {
+          "client_id": 12,
+          "support": 41,
+          "macro_f1": 0.5571895424836601,
+          "accuracy": 0.6341463414634146
+        },
+        {
+          "client_id": 13,
+          "support": 34,
+          "macro_f1": 0.5387799564270153,
+          "accuracy": 0.5882352941176471
+        },
+        {
+          "client_id": 14,
+          "support": 38,
+          "macro_f1": 0.7305764411027568,
+          "accuracy": 0.7631578947368421
+        },
+        {
+          "client_id": 18,
+          "support": 43,
+          "macro_f1": 0.6697984749455337,
+          "accuracy": 0.7441860465116279
+        },
+        {
+          "client_id": 19,
+          "support": 43,
+          "macro_f1": 0.34920634920634913,
+          "accuracy": 0.4186046511627907
+        },
+        {
+          "client_id": 20,
+          "support": 41,
+          "macro_f1": 0.7517898767898767,
+          "accuracy": 0.8048780487804879
+        },
+        {
+          "client_id": 21,
+          "support": 47,
+          "macro_f1": 0.861111111111111,
+          "accuracy": 0.9148936170212766
+        },
+        {
+          "client_id": 24,
+          "support": 44,
+          "macro_f1": 0.7217412217412217,
+          "accuracy": 0.7272727272727273
+        },
+        {
+          "client_id": 25,
+          "support": 49,
+          "macro_f1": 0.7040882509303562,
+          "accuracy": 0.7551020408163265
+        },
+        {
+          "client_id": 27,
+          "support": 49,
+          "macro_f1": 0.6948051948051948,
+          "accuracy": 0.6938775510204082
+        },
+        {
+          "client_id": 28,
+          "support": 41,
+          "macro_f1": 0.7261904761904763,
+          "accuracy": 0.8048780487804879
+        },
+        {
+          "client_id": 29,
+          "support": 39,
+          "macro_f1": 0.5333333333333333,
+          "accuracy": 0.6153846153846154
+        },
+        {
+          "client_id": 30,
+          "support": 42,
+          "macro_f1": 0.5168253968253969,
+          "accuracy": 0.5476190476190477
+        }
+      ]
+    }
+  ],
+  "workspaces": [
+    {
+      "owner": "zzr",
+      "policy_called_after_warmup": true,
+      "summary": {
+        "purpose": "short_federated_pipeline_validation",
+        "method": "fedavg_u",
+        "scenario": "natural_heterogeneous",
+        "completed_rounds": 6,
+        "stop_reason": "round_cap",
+        "sim_seconds_used": 0.5995442450084888,
+        "budget_sim_seconds": 10.0,
+        "up_bytes": 588564,
+        "down_bytes": 588564,
+        "training_steps": 144,
+        "wall_seconds": 0.4971596999675967,
+        "initial_mean_client_macro_f1": 0.08090956552820261,
+        "mean_client_macro_f1": 0.5526875243846247,
+        "evaluation_scope": "search_validation",
+        "validation_clients": 20,
+        "per_client_metrics": [
+          {
+            "client_id": 2,
+            "support": 34,
+            "macro_f1": 0.5011635423400129,
+            "accuracy": 0.5882352941176471
+          },
+          {
+            "client_id": 3,
+            "support": 38,
+            "macro_f1": 0.8028322440087147,
+            "accuracy": 0.8157894736842105
+          },
+          {
+            "client_id": 5,
+            "support": 34,
+            "macro_f1": 0.5416666666666666,
+            "accuracy": 0.5882352941176471
+          },
+          {
+            "client_id": 7,
+            "support": 34,
+            "macro_f1": 0.5564814814814815,
+            "accuracy": 0.6176470588235294
+          },
+          {
+            "client_id": 8,
+            "support": 33,
+            "macro_f1": 0.5227873977873978,
+            "accuracy": 0.5757575757575758
+          },
+          {
+            "client_id": 10,
+            "support": 35,
+            "macro_f1": 0.46947738252086074,
+            "accuracy": 0.5428571428571428
+          },
+          {
+            "client_id": 11,
+            "support": 40,
+            "macro_f1": 0.6083662714097496,
+            "accuracy": 0.675
+          },
+          {
+            "client_id": 12,
+            "support": 41,
+            "macro_f1": 0.4661506707946336,
+            "accuracy": 0.5609756097560976
+          },
+          {
+            "client_id": 13,
+            "support": 34,
+            "macro_f1": 0.4142008318478907,
+            "accuracy": 0.5294117647058824
+          },
+          {
+            "client_id": 14,
+            "support": 38,
+            "macro_f1": 0.5453912559175716,
+            "accuracy": 0.5789473684210527
+          },
+          {
+            "client_id": 18,
+            "support": 43,
+            "macro_f1": 0.5239651416122004,
+            "accuracy": 0.5813953488372093
+          },
+          {
+            "client_id": 19,
+            "support": 43,
+            "macro_f1": 0.3,
+            "accuracy": 0.3953488372093023
+          },
+          {
+            "client_id": 20,
+            "support": 41,
+            "macro_f1": 0.5724789915966386,
+            "accuracy": 0.7073170731707317
+          },
+          {
+            "client_id": 21,
+            "support": 47,
+            "macro_f1": 0.8292929292929293,
+            "accuracy": 0.8723404255319149
+          },
+          {
+            "client_id": 24,
+            "support": 44,
+            "macro_f1": 0.6628956228956229,
+            "accuracy": 0.6818181818181818
+          },
+          {
+            "client_id": 25,
+            "support": 49,
+            "macro_f1": 0.7040882509303562,
+            "accuracy": 0.7551020408163265
+          },
+          {
+            "client_id": 27,
+            "support": 49,
+            "macro_f1": 0.6677115987460814,
+            "accuracy": 0.673469387755102
+          },
+          {
+            "client_id": 28,
+            "support": 41,
+            "macro_f1": 0.39095405399753225,
+            "accuracy": 0.4146341463414634
+          },
+          {
+            "client_id": 29,
+            "support": 39,
+            "macro_f1": 0.5333333333333333,
+            "accuracy": 0.6153846153846154
+          },
+          {
+            "client_id": 30,
+            "support": 42,
+            "macro_f1": 0.44051282051282054,
+            "accuracy": 0.47619047619047616
+          }
+        ]
+      }
+    },
+    {
+      "owner": "zzw",
+      "policy_called_after_warmup": true,
+      "summary": {
+        "purpose": "short_federated_pipeline_validation",
+        "method": "fedavg_u",
+        "scenario": "natural_heterogeneous",
+        "completed_rounds": 6,
+        "stop_reason": "round_cap",
+        "sim_seconds_used": 0.5995442450084888,
+        "budget_sim_seconds": 10.0,
+        "up_bytes": 588564,
+        "down_bytes": 588564,
+        "training_steps": 144,
+        "wall_seconds": 0.48661940003512427,
+        "initial_mean_client_macro_f1": 0.08090956552820261,
+        "mean_client_macro_f1": 0.5526875243846247,
+        "evaluation_scope": "search_validation",
+        "validation_clients": 20,
+        "per_client_metrics": [
+          {
+            "client_id": 2,
+            "support": 34,
+            "macro_f1": 0.5011635423400129,
+            "accuracy": 0.5882352941176471
+          },
+          {
+            "client_id": 3,
+            "support": 38,
+            "macro_f1": 0.8028322440087147,
+            "accuracy": 0.8157894736842105
+          },
+          {
+            "client_id": 5,
+            "support": 34,
+            "macro_f1": 0.5416666666666666,
+            "accuracy": 0.5882352941176471
+          },
+          {
+            "client_id": 7,
+            "support": 34,
+            "macro_f1": 0.5564814814814815,
+            "accuracy": 0.6176470588235294
+          },
+          {
+            "client_id": 8,
+            "support": 33,
+            "macro_f1": 0.5227873977873978,
+            "accuracy": 0.5757575757575758
+          },
+          {
+            "client_id": 10,
+            "support": 35,
+            "macro_f1": 0.46947738252086074,
+            "accuracy": 0.5428571428571428
+          },
+          {
+            "client_id": 11,
+            "support": 40,
+            "macro_f1": 0.6083662714097496,
+            "accuracy": 0.675
+          },
+          {
+            "client_id": 12,
+            "support": 41,
+            "macro_f1": 0.4661506707946336,
+            "accuracy": 0.5609756097560976
+          },
+          {
+            "client_id": 13,
+            "support": 34,
+            "macro_f1": 0.4142008318478907,
+            "accuracy": 0.5294117647058824
+          },
+          {
+            "client_id": 14,
+            "support": 38,
+            "macro_f1": 0.5453912559175716,
+            "accuracy": 0.5789473684210527
+          },
+          {
+            "client_id": 18,
+            "support": 43,
+            "macro_f1": 0.5239651416122004,
+            "accuracy": 0.5813953488372093
+          },
+          {
+            "client_id": 19,
+            "support": 43,
+            "macro_f1": 0.3,
+            "accuracy": 0.3953488372093023
+          },
+          {
+            "client_id": 20,
+            "support": 41,
+            "macro_f1": 0.5724789915966386,
+            "accuracy": 0.7073170731707317
+          },
+          {
+            "client_id": 21,
+            "support": 47,
+            "macro_f1": 0.8292929292929293,
+            "accuracy": 0.8723404255319149
+          },
+          {
+            "client_id": 24,
+            "support": 44,
+            "macro_f1": 0.6628956228956229,
+            "accuracy": 0.6818181818181818
+          },
+          {
+            "client_id": 25,
+            "support": 49,
+            "macro_f1": 0.7040882509303562,
+            "accuracy": 0.7551020408163265
+          },
+          {
+            "client_id": 27,
+            "support": 49,
+            "macro_f1": 0.6677115987460814,
+            "accuracy": 0.673469387755102
+          },
+          {
+            "client_id": 28,
+            "support": 41,
+            "macro_f1": 0.39095405399753225,
+            "accuracy": 0.4146341463414634
+          },
+          {
+            "client_id": 29,
+            "support": 39,
+            "macro_f1": 0.5333333333333333,
+            "accuracy": 0.6153846153846154
+          },
+          {
+            "client_id": 30,
+            "support": 42,
+            "macro_f1": 0.44051282051282054,
+            "accuracy": 0.47619047619047616
+          }
+        ]
+      }
+    },
+    {
+      "owner": "ghj",
+      "policy_called_after_warmup": true,
+      "summary": {
+        "purpose": "short_federated_pipeline_validation",
+        "method": "fedavg_u",
+        "scenario": "natural_heterogeneous",
+        "completed_rounds": 6,
+        "stop_reason": "round_cap",
+        "sim_seconds_used": 0.5995442450084888,
+        "budget_sim_seconds": 10.0,
+        "up_bytes": 588564,
+        "down_bytes": 588564,
+        "training_steps": 144,
+        "wall_seconds": 0.5423212999594398,
+        "initial_mean_client_macro_f1": 0.08090956552820261,
+        "mean_client_macro_f1": 0.5526875243846247,
+        "evaluation_scope": "search_validation",
+        "validation_clients": 20,
+        "per_client_metrics": [
+          {
+            "client_id": 2,
+            "support": 34,
+            "macro_f1": 0.5011635423400129,
+            "accuracy": 0.5882352941176471
+          },
+          {
+            "client_id": 3,
+            "support": 38,
+            "macro_f1": 0.8028322440087147,
+            "accuracy": 0.8157894736842105
+          },
+          {
+            "client_id": 5,
+            "support": 34,
+            "macro_f1": 0.5416666666666666,
+            "accuracy": 0.5882352941176471
+          },
+          {
+            "client_id": 7,
+            "support": 34,
+            "macro_f1": 0.5564814814814815,
+            "accuracy": 0.6176470588235294
+          },
+          {
+            "client_id": 8,
+            "support": 33,
+            "macro_f1": 0.5227873977873978,
+            "accuracy": 0.5757575757575758
+          },
+          {
+            "client_id": 10,
+            "support": 35,
+            "macro_f1": 0.46947738252086074,
+            "accuracy": 0.5428571428571428
+          },
+          {
+            "client_id": 11,
+            "support": 40,
+            "macro_f1": 0.6083662714097496,
+            "accuracy": 0.675
+          },
+          {
+            "client_id": 12,
+            "support": 41,
+            "macro_f1": 0.4661506707946336,
+            "accuracy": 0.5609756097560976
+          },
+          {
+            "client_id": 13,
+            "support": 34,
+            "macro_f1": 0.4142008318478907,
+            "accuracy": 0.5294117647058824
+          },
+          {
+            "client_id": 14,
+            "support": 38,
+            "macro_f1": 0.5453912559175716,
+            "accuracy": 0.5789473684210527
+          },
+          {
+            "client_id": 18,
+            "support": 43,
+            "macro_f1": 0.5239651416122004,
+            "accuracy": 0.5813953488372093
+          },
+          {
+            "client_id": 19,
+            "support": 43,
+            "macro_f1": 0.3,
+            "accuracy": 0.3953488372093023
+          },
+          {
+            "client_id": 20,
+            "support": 41,
+            "macro_f1": 0.5724789915966386,
+            "accuracy": 0.7073170731707317
+          },
+          {
+            "client_id": 21,
+            "support": 47,
+            "macro_f1": 0.8292929292929293,
+            "accuracy": 0.8723404255319149
+          },
+          {
+            "client_id": 24,
+            "support": 44,
+            "macro_f1": 0.6628956228956229,
+            "accuracy": 0.6818181818181818
+          },
+          {
+            "client_id": 25,
+            "support": 49,
+            "macro_f1": 0.7040882509303562,
+            "accuracy": 0.7551020408163265
+          },
+          {
+            "client_id": 27,
+            "support": 49,
+            "macro_f1": 0.6677115987460814,
+            "accuracy": 0.673469387755102
+          },
+          {
+            "client_id": 28,
+            "support": 41,
+            "macro_f1": 0.39095405399753225,
+            "accuracy": 0.4146341463414634
+          },
+          {
+            "client_id": 29,
+            "support": 39,
+            "macro_f1": 0.5333333333333333,
+            "accuracy": 0.6153846153846154
+          },
+          {
+            "client_id": 30,
+            "support": 42,
+            "macro_f1": 0.44051282051282054,
+            "accuracy": 0.47619047619047616
+          }
+        ]
+      }
+    },
+    {
+      "owner": "xyk",
+      "policy_called_after_warmup": true,
+      "summary": {
+        "purpose": "short_federated_pipeline_validation",
+        "method": "fedavg_u",
+        "scenario": "natural_heterogeneous",
+        "completed_rounds": 6,
+        "stop_reason": "round_cap",
+        "sim_seconds_used": 0.5995442450084888,
+        "budget_sim_seconds": 10.0,
+        "up_bytes": 588564,
+        "down_bytes": 588564,
+        "training_steps": 144,
+        "wall_seconds": 0.46793830004753545,
+        "initial_mean_client_macro_f1": 0.08090956552820261,
+        "mean_client_macro_f1": 0.5526875243846247,
+        "evaluation_scope": "search_validation",
+        "validation_clients": 20,
+        "per_client_metrics": [
+          {
+            "client_id": 2,
+            "support": 34,
+            "macro_f1": 0.5011635423400129,
+            "accuracy": 0.5882352941176471
+          },
+          {
+            "client_id": 3,
+            "support": 38,
+            "macro_f1": 0.8028322440087147,
+            "accuracy": 0.8157894736842105
+          },
+          {
+            "client_id": 5,
+            "support": 34,
+            "macro_f1": 0.5416666666666666,
+            "accuracy": 0.5882352941176471
+          },
+          {
+            "client_id": 7,
+            "support": 34,
+            "macro_f1": 0.5564814814814815,
+            "accuracy": 0.6176470588235294
+          },
+          {
+            "client_id": 8,
+            "support": 33,
+            "macro_f1": 0.5227873977873978,
+            "accuracy": 0.5757575757575758
+          },
+          {
+            "client_id": 10,
+            "support": 35,
+            "macro_f1": 0.46947738252086074,
+            "accuracy": 0.5428571428571428
+          },
+          {
+            "client_id": 11,
+            "support": 40,
+            "macro_f1": 0.6083662714097496,
+            "accuracy": 0.675
+          },
+          {
+            "client_id": 12,
+            "support": 41,
+            "macro_f1": 0.4661506707946336,
+            "accuracy": 0.5609756097560976
+          },
+          {
+            "client_id": 13,
+            "support": 34,
+            "macro_f1": 0.4142008318478907,
+            "accuracy": 0.5294117647058824
+          },
+          {
+            "client_id": 14,
+            "support": 38,
+            "macro_f1": 0.5453912559175716,
+            "accuracy": 0.5789473684210527
+          },
+          {
+            "client_id": 18,
+            "support": 43,
+            "macro_f1": 0.5239651416122004,
+            "accuracy": 0.5813953488372093
+          },
+          {
+            "client_id": 19,
+            "support": 43,
+            "macro_f1": 0.3,
+            "accuracy": 0.3953488372093023
+          },
+          {
+            "client_id": 20,
+            "support": 41,
+            "macro_f1": 0.5724789915966386,
+            "accuracy": 0.7073170731707317
+          },
+          {
+            "client_id": 21,
+            "support": 47,
+            "macro_f1": 0.8292929292929293,
+            "accuracy": 0.8723404255319149
+          },
+          {
+            "client_id": 24,
+            "support": 44,
+            "macro_f1": 0.6628956228956229,
+            "accuracy": 0.6818181818181818
+          },
+          {
+            "client_id": 25,
+            "support": 49,
+            "macro_f1": 0.7040882509303562,
+            "accuracy": 0.7551020408163265
+          },
+          {
+            "client_id": 27,
+            "support": 49,
+            "macro_f1": 0.6677115987460814,
+            "accuracy": 0.673469387755102
+          },
+          {
+            "client_id": 28,
+            "support": 41,
+            "macro_f1": 0.39095405399753225,
+            "accuracy": 0.4146341463414634
+          },
+          {
+            "client_id": 29,
+            "support": 39,
+            "macro_f1": 0.5333333333333333,
+            "accuracy": 0.6153846153846154
+          },
+          {
+            "client_id": 30,
+            "support": 42,
+            "macro_f1": 0.44051282051282054,
+            "accuracy": 0.47619047619047616
+          }
+        ]
+      }
+    }
+  ],
+  "fedprox_run": {
+    "purpose": "short_federated_pipeline_validation",
+    "method": "fedprox_u",
+    "scenario": "natural_heterogeneous",
+    "completed_rounds": 6,
+    "stop_reason": "round_cap",
+    "sim_seconds_used": 0.5995442450084888,
+    "budget_sim_seconds": 10.0,
+    "up_bytes": 588564,
+    "down_bytes": 588564,
+    "training_steps": 144,
+    "wall_seconds": 0.5415491000167094,
+    "initial_mean_client_macro_f1": 0.08090956552820261,
+    "mean_client_macro_f1": 0.5526875243846247,
+    "evaluation_scope": "search_validation",
+    "validation_clients": 20,
+    "per_client_metrics": [
+      {
+        "client_id": 2,
+        "support": 34,
+        "macro_f1": 0.5011635423400129,
+        "accuracy": 0.5882352941176471
+      },
+      {
+        "client_id": 3,
+        "support": 38,
+        "macro_f1": 0.8028322440087147,
+        "accuracy": 0.8157894736842105
+      },
+      {
+        "client_id": 5,
+        "support": 34,
+        "macro_f1": 0.5416666666666666,
+        "accuracy": 0.5882352941176471
+      },
+      {
+        "client_id": 7,
+        "support": 34,
+        "macro_f1": 0.5564814814814815,
+        "accuracy": 0.6176470588235294
+      },
+      {
+        "client_id": 8,
+        "support": 33,
+        "macro_f1": 0.5227873977873978,
+        "accuracy": 0.5757575757575758
+      },
+      {
+        "client_id": 10,
+        "support": 35,
+        "macro_f1": 0.46947738252086074,
+        "accuracy": 0.5428571428571428
+      },
+      {
+        "client_id": 11,
+        "support": 40,
+        "macro_f1": 0.6083662714097496,
+        "accuracy": 0.675
+      },
+      {
+        "client_id": 12,
+        "support": 41,
+        "macro_f1": 0.4661506707946336,
+        "accuracy": 0.5609756097560976
+      },
+      {
+        "client_id": 13,
+        "support": 34,
+        "macro_f1": 0.4142008318478907,
+        "accuracy": 0.5294117647058824
+      },
+      {
+        "client_id": 14,
+        "support": 38,
+        "macro_f1": 0.5453912559175716,
+        "accuracy": 0.5789473684210527
+      },
+      {
+        "client_id": 18,
+        "support": 43,
+        "macro_f1": 0.5239651416122004,
+        "accuracy": 0.5813953488372093
+      },
+      {
+        "client_id": 19,
+        "support": 43,
+        "macro_f1": 0.3,
+        "accuracy": 0.3953488372093023
+      },
+      {
+        "client_id": 20,
+        "support": 41,
+        "macro_f1": 0.5724789915966386,
+        "accuracy": 0.7073170731707317
+      },
+      {
+        "client_id": 21,
+        "support": 47,
+        "macro_f1": 0.8292929292929293,
+        "accuracy": 0.8723404255319149
+      },
+      {
+        "client_id": 24,
+        "support": 44,
+        "macro_f1": 0.6628956228956229,
+        "accuracy": 0.6818181818181818
+      },
+      {
+        "client_id": 25,
+        "support": 49,
+        "macro_f1": 0.7040882509303562,
+        "accuracy": 0.7551020408163265
+      },
+      {
+        "client_id": 27,
+        "support": 49,
+        "macro_f1": 0.6677115987460814,
+        "accuracy": 0.673469387755102
+      },
+      {
+        "client_id": 28,
+        "support": 41,
+        "macro_f1": 0.39095405399753225,
+        "accuracy": 0.4146341463414634
+      },
+      {
+        "client_id": 29,
+        "support": 39,
+        "macro_f1": 0.5333333333333333,
+        "accuracy": 0.6153846153846154
+      },
+      {
+        "client_id": 30,
+        "support": 42,
+        "macro_f1": 0.44051282051282054,
+        "accuracy": 0.47619047619047616
+      }
+    ]
+  },
+  "data_total_windows": {
+    "train": 2748,
+    "validation": 1194,
+    "test": 1462
+  },
+  "source_archive_sha256": "4ac4ae064227c07045a99551876b54d204837e995e298b6488559e209b3deb09",
+  "data_hash": "f3382a029de9e2179f545bc5e8d2f1b87a2ea798dd06e2b473cf6bcc7f6d9702",
+  "protocol_hash": "aa2743f505ae33a55f966143a2f5c436502583823781758116100a312d266e65",
+  "uv_lock_sha256": "7432b959216b96250340cd0c256a54d203fcb042c6d33576f9361b8a606aa61a",
+  "validation_script_sha256": "302b23d4b9a2465bfa3c36ddfc41d2f6b58d2ecb51766b0e066079e422699a86",
+  "source_state": "local_bootstrap_validation_not_a_published_research_run",
+  "environment": {
+    "python": "3.11.17",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "machine": "AMD64",
+    "implementation": "CPython",
+    "uv": "0.12.23",
+    "uv_lock_sha256": "7432b959216b96250340cd0c256a54d203fcb042c6d33576f9361b8a606aa61a",
+    "runtime_config_sha256": "db2915a8ffc49ae52cd862915fbb5979ce3f6d227368949db509e769fc93743d",
+    "profile": "cpu-v1",
+    "installed_distributions": {
+      "Jinja2": "3.1.6",
+      "MarkupSafe": "3.0.4",
+      "cloudpickle": "3.1.2",
+      "edgefl-client-selection": "0.1.0",
+      "filelock": "4.2.4",
+      "fsspec": "2026.9.0",
+      "joblib": "1.6.0",
+      "mpmath": "1.3.0",
+      "narwhals": "2.27.1",
+      "networkx": "3.6.1",
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1",
+      "setuptools": "84.2.0",
+      "sympy": "1.14.0",
+      "threadpoolctl": "3.7.0",
+      "torch": "2.14.1+cpu",
+      "typing_extensions": "4.16.0"
+    }
+  },
+  "diagnostic_cost_profile": {
+    "reference_train_step_seconds": 0.0011292000126559287,
+    "server_round_seconds": 0.00196020002476871,
+    "step_measurements_seconds": [
+      0.0012076999992132187,
+      0.0014205999905243516,
+      0.0010507000260986388,
+      0.0009469999931752682
+    ],
+    "server_measurements_seconds": [
+      0.012335599982179701,
+      0.0023104999563656747,
+      0.00196020002476871,
+      0.0018202000064775348,
+      0.0016888999962247908
+    ]
+  },
+  "settings": {
+    "purpose": "real_hapt_short_pipeline_validation",
+    "seed": 11,
+    "main_rounds": 8,
+    "checkpoint_round": 4,
+    "scenario_rounds": 6,
+    "workspace_rounds": 6,
+    "diagnostic_budget_sim_seconds": 10.0,
+    "proximal_mu": 0.01,
+    "evaluation_stage": "development",
+    "network": "configs/system/cost_model.json",
+    "note": "Round-capped engineering validation only; not the frozen B or a final method comparison."
+  },
+  "limitations": [
+    "Round-capped development validation, not a converged score or method comparison.",
+    "Diagnostic simulated budget/costs are not the frozen research B/cost model.",
+    "SCAFFOLD, Oort and other selection baselines are not validated by this check.",
+    "Confirmation/final test labels are not evaluated."
+  ]
+}

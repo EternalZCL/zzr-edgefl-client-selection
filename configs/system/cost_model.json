@@ -1,0 +1,11 @@
+{
+  "version": "cost-v0-draft",
+  "status": "uncalibrated",
+  "reference_hardware": null,
+  "reference_train_step_seconds": null,
+  "server_round_seconds": null,
+  "network_assumptions": {"downlink_mbps": 50, "uplink_mbps": 10, "rtt_ms": 10, "independent_client_links": true},
+  "bill_extra_selector_compute_and_messages": true,
+  "evidence_uri": null,
+  "note": "Network values are simulation assumptions. CPU/server costs require real profiling."
+}

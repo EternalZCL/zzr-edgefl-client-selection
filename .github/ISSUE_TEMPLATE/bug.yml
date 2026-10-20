@@ -1,0 +1,21 @@
+name: 实现或评测错误
+description: 报告数据、训练、计费、复现或协作工具的问题
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 复现信息
+      description: 提供 commit、协议版本、配置、run ID、环境和执行命令。
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: 实际行为与预期行为
+    validations:
+      required: true
+  - type: textarea
+    id: affected
+    attributes:
+      label: 影响范围
+      description: 说明受影响的记录、基线与当前结论，是否需要停止晋级或重跑。

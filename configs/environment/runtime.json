@@ -1,0 +1,13 @@
+{
+  "profile": "cpu-v1",
+  "python": "3.11.17",
+  "uv": "0.12.23",
+  "device": "cpu",
+  "dtype": "float32",
+  "torch_num_threads": 1,
+  "torch_num_interop_threads": 1,
+  "deterministic_algorithms": true,
+  "omp_num_threads": 1,
+  "mkl_num_threads": 1,
+  "openblas_num_threads": 1
+}

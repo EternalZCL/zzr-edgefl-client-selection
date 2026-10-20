@@ -1,0 +1,90 @@
+{
+  "status": "passed",
+  "purpose": "synthetic_environment_smoke_only",
+  "created_at_utc": "2026-10-20T08:16:04.750128+00:00",
+  "checks": {
+    "loss_decreased": true,
+    "test_macro_f1_passed": true,
+    "resume_weights_exactly_equal": true,
+    "resume_predictions_exactly_equal": true,
+    "cpu_only_build": true,
+    "project_virtual_environment": true
+  },
+  "metrics": {
+    "initial_train_loss": 1.8641705513000488,
+    "final_train_loss": 0.004934999626129866,
+    "synthetic_test_macro_f1": 1.0,
+    "synthetic_test_accuracy": 1.0,
+    "training_and_resume_wall_seconds": 0.39062349998857826
+  },
+  "model": {
+    "layers": [
+      48,
+      64,
+      6
+    ],
+    "parameters": 3526
+  },
+  "config": {
+    "purpose": "synthetic_environment_smoke_only",
+    "seed": 20261020,
+    "device": "cpu",
+    "torch_num_threads": 1,
+    "torch_num_interop_threads": 1,
+    "deterministic_algorithms": true,
+    "train_samples": 600,
+    "test_samples": 180,
+    "input_features": 48,
+    "hidden_features": 64,
+    "num_classes": 6,
+    "noise_std": 0.5,
+    "optimizer": "sgd",
+    "learning_rate": 0.03,
+    "batch_size": 16,
+    "gradient_steps": 240,
+    "checkpoint_step": 120,
+    "maximum_final_to_initial_loss_ratio": 0.4,
+    "minimum_test_macro_f1": 0.9
+  },
+  "environment": {
+    "python": "3.11.17",
+    "implementation": "CPython",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "machine": "AMD64",
+    "uv": "0.12.23",
+    "numpy": "2.4.6",
+    "torch": "2.14.1+cpu",
+    "scikit-learn": "1.9.1",
+    "torch_cuda_build": null,
+    "torch_num_threads": 1,
+    "torch_num_interop_threads": 1,
+    "deterministic_algorithms": true,
+    "installed_distributions": {
+      "Jinja2": "3.1.6",
+      "MarkupSafe": "3.0.4",
+      "cloudpickle": "3.1.2",
+      "edgefl-client-selection": "0.1.0",
+      "filelock": "4.2.4",
+      "fsspec": "2026.9.0",
+      "joblib": "1.6.0",
+      "mpmath": "1.3.0",
+      "narwhals": "2.27.1",
+      "networkx": "3.6.1",
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1",
+      "setuptools": "84.2.0",
+      "sympy": "1.14.0",
+      "threadpoolctl": "3.7.0",
+      "torch": "2.14.1+cpu",
+      "typing_extensions": "4.16.0"
+    }
+  },
+  "provenance": {
+    "config_sha256": "286282f19c52fbcc11dfc69baf91e01361e94648b71329008cfeb3b17f0c3a3e",
+    "uv_lock_sha256": "7432b959216b96250340cd0c256a54d203fcb042c6d33576f9361b8a606aa61a",
+    "checkpoint_sha256": "f4bae0d55fc87b7a108d9839271fa0d0a032bb538916741d0d959a2bd256af81",
+    "synthetic_arrays_sha256": "3a637f4d763d5f5873e128905c1d404a2cb63c39bc4dc1b7a8d5713c2df731c0"
+  },
+  "limitations": "Synthetic single-process CPU training only; not HAPT, FL correctness, or calibrated benchmark timing."
+}

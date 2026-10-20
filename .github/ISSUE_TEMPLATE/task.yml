@@ -1,0 +1,24 @@
+name: 建设或研究任务
+description: 认领基础设施、复现、假设验证或文档工作
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: 目标与问题
+      description: 描述要解决的具体问题；研究任务需写出可反驳假设。
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 范围与依赖
+      description: 预计修改的目录、前置条件、协议影响与临时认领人。
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收与交接
+      description: 最小验证、成功或停止条件，以及需保存的证据。
+    validations:
+      required: true

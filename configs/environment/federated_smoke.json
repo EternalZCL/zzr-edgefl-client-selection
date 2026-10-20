@@ -1,0 +1,13 @@
+{
+  "purpose": "real_hapt_short_pipeline_validation",
+  "seed": 11,
+  "main_rounds": 8,
+  "checkpoint_round": 4,
+  "scenario_rounds": 6,
+  "workspace_rounds": 6,
+  "diagnostic_budget_sim_seconds": 10.0,
+  "proximal_mu": 0.01,
+  "evaluation_stage": "development",
+  "network": "configs/system/cost_model.json",
+  "note": "Round-capped engineering validation only; not the frozen B or a final method comparison."
+}

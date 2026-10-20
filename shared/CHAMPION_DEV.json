@@ -1,0 +1,11 @@
+{
+  "status": "uninitialized",
+  "method_id": null,
+  "owner": null,
+  "git_commit": null,
+  "protocol_hash": null,
+  "config_hash": null,
+  "run_ids": [],
+  "j_dev_mean": null,
+  "review_reference": null
+}

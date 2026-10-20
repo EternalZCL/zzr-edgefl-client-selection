@@ -1,0 +1,10 @@
+{
+  "status": "draft_do_not_run",
+  "protocol_hash": null,
+  "candidate_method": null,
+  "budget_sim_seconds": null,
+  "seeds": [101, 102, 103, 104, 105],
+  "core_planned_runs": 175,
+  "frozen_run_matrix": [],
+  "note": "Freeze exact methods, ablations, costs and seeds after search; this is not an executable campaign."
+}

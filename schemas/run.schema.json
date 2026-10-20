@@ -1,0 +1,431 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EdgeFL immutable terminal run summary",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_sha256",
+    "artifact_uri",
+    "budget_sim_seconds",
+    "completed_rounds",
+    "config_hash",
+    "cost_hash",
+    "created_at",
+    "data_hash",
+    "down_bytes",
+    "environment",
+    "error",
+    "evaluation_scope",
+    "fidelity",
+    "git_commit",
+    "hypothesis_id",
+    "j_dev",
+    "mean_client_macro_f1",
+    "method_id",
+    "owner",
+    "parent_method",
+    "protocol_hash",
+    "run_id",
+    "scenario",
+    "schema_version",
+    "seed",
+    "sim_seconds_used",
+    "stage",
+    "status",
+    "supersedes",
+    "up_bytes",
+    "wall_seconds"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{0,119}$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "owner": {
+      "enum": [
+        "zzr",
+        "zzw",
+        "ghj",
+        "xyk"
+      ]
+    },
+    "method_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{0,119}$"
+    },
+    "parent_method": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "hypothesis_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "supersedes": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "scenario": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{0,119}$"
+    },
+    "seed": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "stage": {
+      "enum": [
+        "development",
+        "confirmation",
+        "test"
+      ]
+    },
+    "evaluation_scope": {
+      "enum": [
+        "search_validation",
+        "confirmation_validation",
+        "final_test"
+      ]
+    },
+    "fidelity": {
+      "enum": [
+        "smoke",
+        "partial",
+        "full"
+      ]
+    },
+    "budget_sim_seconds": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "exclusiveMinimum": 0
+    },
+    "status": {
+      "enum": [
+        "complete",
+        "failed",
+        "timeout",
+        "invalid"
+      ]
+    },
+    "mean_client_macro_f1": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "j_dev": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "sim_seconds_used": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "wall_seconds": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "up_bytes": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "down_bytes": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "completed_rounds": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "artifact_uri": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "environment": {
+      "type": "object"
+    },
+    "error": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "protocol_hash": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "data_hash": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "config_hash": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "cost_hash": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "artifact_sha256": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "git_commit": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{40}$"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "stage": {
+            "const": "development"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "evaluation_scope": {
+            "const": "search_validation"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "stage": {
+            "const": "confirmation"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "evaluation_scope": {
+            "const": "confirmation_validation"
+          },
+          "j_dev": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "stage": {
+            "const": "test"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "evaluation_scope": {
+            "const": "final_test"
+          },
+          "j_dev": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "complete"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "git_commit": {
+            "not": {
+              "type": "null"
+            }
+          },
+          "protocol_hash": {
+            "not": {
+              "type": "null"
+            }
+          },
+          "data_hash": {
+            "not": {
+              "type": "null"
+            }
+          },
+          "config_hash": {
+            "not": {
+              "type": "null"
+            }
+          },
+          "cost_hash": {
+            "not": {
+              "type": "null"
+            }
+          },
+          "artifact_sha256": {
+            "not": {
+              "type": "null"
+            }
+          },
+          "budget_sim_seconds": {
+            "not": {
+              "type": "null"
+            }
+          },
+          "mean_client_macro_f1": {
+            "not": {
+              "type": "null"
+            }
+          },
+          "sim_seconds_used": {
+            "not": {
+              "type": "null"
+            }
+          },
+          "wall_seconds": {
+            "not": {
+              "type": "null"
+            }
+          },
+          "up_bytes": {
+            "not": {
+              "type": "null"
+            }
+          },
+          "down_bytes": {
+            "not": {
+              "type": "null"
+            }
+          },
+          "completed_rounds": {
+            "minimum": 1
+          },
+          "artifact_uri": {
+            "not": {
+              "type": "null"
+            }
+          },
+          "error": {
+            "type": "null"
+          },
+          "environment": {
+            "required": [
+              "python",
+              "platform"
+            ],
+            "properties": {
+              "python": {
+                "type": "string",
+                "minLength": 1
+              },
+              "platform": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "error": {
+            "type": "string",
+            "minLength": 1
+          },
+          "j_dev": {
+            "type": "null"
+          },
+          "mean_client_macro_f1": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "complete"
+          },
+          "stage": {
+            "const": "development"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "j_dev": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    }
+  ],
+  "$comment": "Temporal-budget and score equality constraints are additionally checked by flbench.records. Draft records are not publishable."
+}

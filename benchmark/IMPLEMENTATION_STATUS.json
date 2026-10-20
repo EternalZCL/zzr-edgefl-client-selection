@@ -1,0 +1,11 @@
+{
+  "data_audit": true,
+  "model": true,
+  "local_training": true,
+  "federated_aggregation": true,
+  "simulated_clock": true,
+  "communication_accounting": true,
+  "evaluation_stage_isolation": true,
+  "checkpoint_resume": true,
+  "training_correctness_checks": true
+}

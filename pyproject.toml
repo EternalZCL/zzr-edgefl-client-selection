@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "edgefl-client-selection"
+version = "0.1.0"
+description = "Collaboration scaffold for time-budgeted federated client selection research"
+requires-python = "==3.11.17"
+dependencies = ["numpy==2.4.6", "torch==2.14.1", "scikit-learn==1.9.1"]
+
+[project.scripts]
+flbench = "flbench.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["flbench*", "benchmark*", "baselines*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.uv]
+required-version = "==0.12.23"
+python-preference = "only-managed"
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cpu", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true

@@ -1,0 +1,10 @@
+{
+  "owner": "ghj",
+  "method_id": "ghj-uniform-starter",
+  "policy_path": "agents/ghj/policy.py",
+  "status": "template_not_run",
+  "parent_method": "uniform_selector",
+  "hypothesis_id": null,
+  "fidelity": "smoke",
+  "note": "Shared benchmark config applies; no training has been run."
+}

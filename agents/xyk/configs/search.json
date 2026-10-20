@@ -1,0 +1,10 @@
+{
+  "owner": "xyk",
+  "method_id": "xyk-uniform-starter",
+  "policy_path": "agents/xyk/policy.py",
+  "status": "template_not_run",
+  "parent_method": "uniform_selector",
+  "hypothesis_id": null,
+  "fidelity": "smoke",
+  "note": "Shared benchmark config applies; no training has been run."
+}

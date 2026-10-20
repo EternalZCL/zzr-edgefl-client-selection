@@ -1,0 +1,39 @@
+name: scaffold-checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  collaboration-tools:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.23'
+          enable-cache: true
+      - name: Create the pinned uv environment
+        run: uv sync --locked
+      - name: Validate runtime and exact lock synchronization
+        run: uv run --locked --exact python scripts/check_environment.py
+      - name: Synthetic CPU training and checkpoint smoke
+        run: uv run --locked --exact python scripts/smoke_train.py
+      - name: Validate repository and generated views
+        run: uv run --locked --exact python scripts/check_repo.py
+      - name: Test collaboration workflows
+        run: uv run --locked --exact python -m unittest discover -s tests -v
+      - name: Validate the real HAPT federated development pipeline
+        run: uv run --locked --exact python scripts/validate_pipeline.py --prepare
+      - name: Check deterministic shared views
+        run: uv run --locked --exact python scripts/sync_leaderboard.py --check
