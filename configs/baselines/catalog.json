@@ -1,13 +1,45 @@
 {
-  "version": "baseline-v0-draft",
+  "version": "baseline-v1-ghj",
   "methods": [
-    {"method_id": "fedavg_u_uniform", "status": "implemented", "role": "initial_baseline"},
-    {"method_id": "fedprox_u_uniform", "status": "implemented", "role": "optimization_baseline"},
-    {"method_id": "scaffold_uniform", "status": "planned", "role": "strong_optimization_baseline"},
-    {"method_id": "fedavg_u_round_robin", "status": "planned", "role": "coverage_baseline"},
-    {"method_id": "fedavg_u_fast_random", "status": "planned", "role": "speed_baseline"},
-    {"method_id": "fedavg_u_oort", "status": "planned", "role": "strong_selection_baseline"},
-    {"method_id": "local_only", "status": "planned", "role": "reference"},
-    {"method_id": "centralized", "status": "planned", "role": "reference"}
+    {
+      "method_id": "fedavg_u_uniform",
+      "status": "implemented",
+      "role": "initial_baseline"
+    },
+    {
+      "method_id": "fedprox_u_uniform",
+      "status": "implemented",
+      "role": "optimization_baseline"
+    },
+    {
+      "method_id": "scaffold_uniform",
+      "status": "implemented",
+      "role": "strong_optimization_baseline"
+    },
+    {
+      "method_id": "fedavg_u_round_robin",
+      "status": "implemented",
+      "role": "coverage_baseline"
+    },
+    {
+      "method_id": "fedavg_u_fast_random",
+      "status": "implemented",
+      "role": "speed_baseline"
+    },
+    {
+      "method_id": "fedavg_u_oort",
+      "status": "implemented",
+      "role": "strong_selection_baseline"
+    },
+    {
+      "method_id": "local_only",
+      "status": "implemented",
+      "role": "reference"
+    },
+    {
+      "method_id": "centralized",
+      "status": "implemented",
+      "role": "reference"
+    }
   ]
 }

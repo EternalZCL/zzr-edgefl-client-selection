@@ -151,15 +151,26 @@ class RepositoryWorkflowTests(unittest.TestCase):
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory()
         self.addCleanup(self.temporary.cleanup)
-        self.root = Path(self.temporary.name) / "repo"
+        # find_root() resolves the production root; Windows TEMP can use an 8.3 alias.
+        self.root = (Path(self.temporary.name) / "repo").resolve()
         shutil.copytree(ROOT, self.root, ignore=shutil.ignore_patterns(
             ".git", "__pycache__", ".venv", "artifacts", "*.egg-info", "hapt", "hapt-v1"))
+        # Workflow fixtures start empty even after the real repository has published runs.
+        for path in self.root.glob("agents/*/runs/*.json"):
+            path.unlink()
+        synchronize(self.root)
 
     def cli(self, *args):
         return subprocess.run([sys.executable, "-m", "flbench", *args], cwd=self.root,
                               capture_output=True, text=True, encoding="utf-8")
 
     def test_bootstrap_cannot_claim_training_readiness(self):
+        config_path = self.root / "configs/benchmark/hapt_v1.json"
+        config = load_json(config_path)
+        config["status"] = "draft"
+        config["evaluation"]["budget_sim_seconds"] = None
+        config_path.write_text(json.dumps(config), encoding="utf-8")
+        synchronize(self.root)
         self.assertTrue(readiness_errors(self.root))
         result = self.cli("check", "--require-ready")
         self.assertNotEqual(result.returncode, 0)
@@ -190,7 +201,7 @@ class RepositoryWorkflowTests(unittest.TestCase):
         (self.root / "agents/zzr/RESEARCH.md").write_text("personal note", encoding="utf-8")
         self.assertEqual(protocol_hash(self.root), before)
         protocol = self.root / "PROTOCOL.md"
-        protocol.write_bytes(protocol.read_bytes().replace(b"\n", b"\r\n"))
+        protocol.write_bytes(protocol.read_bytes().replace(b"\r\n", b"\n").replace(b"\n", b"\r\n"))
         self.assertEqual(protocol_hash(self.root), before)
         path = self.root / "benchmark/trainer.py"
         path.write_text(path.read_text(encoding="utf-8") + "\n# Shared behavior change\n", encoding="utf-8")

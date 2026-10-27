@@ -1,0 +1,5 @@
+{
+  "method_id": "fedavg_sample_weighted",
+  "selector": "uniform",
+  "sample_weighted": true
+}

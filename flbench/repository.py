@@ -78,6 +78,10 @@ def readiness_errors(root: Path) -> list[str]:
             or not finite_number(cost["server_round_seconds"])
             or not cost["reference_hardware"] or not cost["evidence_uri"]):
         errors.append("Measured compute/server costs and profiling evidence are missing.")
+    if cost.get("evidence_sha256"):
+        evidence = (root / cost["evidence_uri"]).resolve()
+        if not evidence.is_relative_to(root) or not evidence.is_file() or file_hash(evidence) != cost["evidence_sha256"]:
+            errors.append("Cost profiling evidence is missing or its checksum differs.")
     errors.extend(f"Implementation pending: {key}" for key, done in implementations.items()
                   if done is not True)
     errors.extend(f"Baseline pending: {item['method_id']}" for item in catalog["methods"]

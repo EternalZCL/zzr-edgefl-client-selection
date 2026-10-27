@@ -1,0 +1,98 @@
+{
+  "owner": "ghj",
+  "scientific_status": "core_study_complete",
+  "completed_at_utc": "2026-10-27T05:45:07.250976+00:00",
+  "code_commit": "51b2cec2e529a2ceb2ba0ba8f8b4664a3ca5015b",
+  "formal_preregistration_commit": "7c13a2686b0d38ad170dd5415b9e394d144db5ad",
+  "protocol_hash": "aa3551b6b85b6074adcac1786f587a728a0d62fc3e041c4c4e6625b2d3be2fc0",
+  "data_manifest_hash": "f3382a029de9e2179f545bc5e8d2f1b87a2ea798dd06e2b473cf6bcc7f6d9702",
+  "counts": {
+    "calibration_pilots": 36,
+    "current_full_budget_development": 144,
+    "matched_round_diagnostics": 9,
+    "one_shot_confirmation": 6,
+    "formal_planned": 175,
+    "formal_complete": 175,
+    "current_study_terminal": 334,
+    "superseded_complete": 37,
+    "superseded_invalid": 1,
+    "all_published_terminal": 372,
+    "all_complete": 371,
+    "artifact_checksums_verified": 372
+  },
+  "final_seeds": [
+    101,
+    102,
+    103,
+    104,
+    105
+  ],
+  "primary_comparison": {
+    "n": 5,
+    "mean": -0.006986673345698779,
+    "sd": 0.014029495654900678,
+    "differences_by_seed": {
+      "101": 0.0045069469578263854,
+      "102": -0.02479784688248121,
+      "103": 0.007003277971353583,
+      "104": -0.0033124063949658833,
+      "105": -0.01833333838022677
+    },
+    "exact_two_sided_sign_flip_p": 0.4375
+  },
+  "conclusion": "No established advantage over the strongest baseline selected on open validation; negative results retained.",
+  "no_test_retuning": true,
+  "champion_promoted": false,
+  "evidence": {
+    "report": "docs/ghj-study/研究报告.md",
+    "qa": "docs/validation/ghj-final-qa.json",
+    "recovery": "docs/validation/ghj-final-recovery.json",
+    "selection": "agents/ghj/SELECTION.json",
+    "formal_manifest": "configs/final/core-final-v2.json",
+    "delivery_instructions": "docs/ghj-delivery.md"
+  },
+  "external": {
+    "github_authenticated": true,
+    "branch_pushed": true,
+    "pr_url": "https://github.com/EternalZCL/zzr-edgefl-client-selection/pull/1",
+    "collaborator_invitations": "excluded_by_user",
+    "branch_protection": "excluded_by_user",
+    "team_review": "pending",
+    "large_artifact_shared_uri": "https://api.github.com/repos/EternalZCL/zzr-edgefl-client-selection/releases/425081385/assets",
+    "github_login": "zhengyan417",
+    "repository_permission": "WRITE",
+    "draft_release_url": "https://github.com/EternalZCL/zzr-edgefl-client-selection/releases",
+    "draft_release_id": 425081385,
+    "large_artifact_visibility": "draft_release_for_authorized_collaborators; final asset verification in delivery sidecar",
+    "draft_release_tag": "ghj-study-2026-10-27",
+    "draft_release_api_url": "https://api.github.com/repos/EternalZCL/zzr-edgefl-client-selection/releases/425081385"
+  },
+  "optional_not_executed": [
+    "235-run enhanced matrix",
+    "second independent dataset",
+    "other members independent research sessions"
+  ],
+  "delivery_restore": {
+    "status": "passed",
+    "source_delivery_commit": "516fad2107967cd29845c8d6a04911dc68e86e5c",
+    "checks": [
+      "all file hashes",
+      "git history and source commit",
+      "fresh exact environment",
+      "repository ready",
+      "generated views",
+      "all 372 archive hashes and identical report statistics",
+      "real-data SCAFFOLD bitwise recovery"
+    ]
+  },
+  "ci": {
+    "initial_linux": "passed",
+    "initial_windows": "failed: unresolved 8.3 TEMP alias in test fixture",
+    "test_only_fix_commit": "c4ecb3d0849a674afa0ec42cb696ca24d4ab1b48",
+    "latest_checks": "see PR #1 Checks",
+    "validated_commit": "c4ecb3d0849a674afa0ec42cb696ca24d4ab1b48",
+    "linux": "success",
+    "windows": "success",
+    "validation_url": "https://github.com/EternalZCL/zzr-edgefl-client-selection/actions/runs/40458458995"
+  }
+}

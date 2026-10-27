@@ -1,0 +1,6 @@
+{
+  "method_id": "scaffold_uniform",
+  "selector": "uniform",
+  "scaffold": true,
+  "server_learning_rate": 1
+}

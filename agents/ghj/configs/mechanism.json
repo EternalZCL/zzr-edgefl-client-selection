@@ -1,0 +1,11 @@
+{
+  "status": "preregistered_before_search",
+  "stage": "development",
+  "scenario": "natural_heterogeneous",
+  "seeds": [11, 22, 33],
+  "completed_rounds": 100,
+  "methods": ["fedavg_u_uniform", "selected_fedavg_u_fast_random", "frozen_ghj_candidate"],
+  "planned_runs": 9,
+  "fidelity": "partial",
+  "purpose": "Distinguish throughput gains at fixed simulated time from quality at identical update counts; never rank as full B."
+}

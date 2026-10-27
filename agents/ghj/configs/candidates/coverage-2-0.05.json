@@ -1,0 +1,11 @@
+{
+  "method_id": "ghj_coverage",
+  "selector": "ghj_coverage",
+  "parent_method": "fedavg_u_fast_random",
+  "hypothesis_id": "ghj-h001",
+  "selector_config": {
+    "exploration": 0.2,
+    "coverage_slots": 2,
+    "wait_fraction": 0.05
+  }
+}

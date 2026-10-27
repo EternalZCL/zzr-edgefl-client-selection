@@ -1,0 +1,5 @@
+{
+  "method_id": "fedprox_u_uniform",
+  "selector": "uniform",
+  "proximal_mu": 1
+}

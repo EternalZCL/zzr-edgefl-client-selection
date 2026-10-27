@@ -60,3 +60,10 @@ uv run --locked --exact python scripts/sync_leaderboard.py
 `CHAMPION_DEV.json` 当前为 `uninitialized`。晋级 PR 必须附不可变 commit、配置、所有 run ID、当前 Champion 引用、同协议配对差、失败边界和复现入口。集成者复核后保存历史引用到 `shared/champions/`，再修改 Champion 指针。
 
 `CHAMPION_FINAL.json` 在搜索冻结、少量候选受限确认之后才产生。此版本未提供自动晋级/最终测试入口，避免脚手架绕过尚未确定的预注册规则。
+## 当前ghj研究分支的可执行训练
+
+原有new-run/publish-run命令仍可用于手工摘要；实际训练另有 `scripts/research.py run` 和 `campaign`。新runner在运行前检查代码/配置commit和当前协议，结束后通过同一不可变发布函数保存摘要，工件含exact configuration、costs、summary、rounds与checkpoint。它不会覆盖既有发布文件。
+
+修订后的开发清单为 `configs/final/dev-search-v2.json`；旧v1开发有37次完成和一次中断invalid，均保留但不混入新协议。选定方法的其余条件、受限确认、最终175行分别由不同冻结清单驱动。确认/测试j_dev始终为null；100轮机制诊断标为partial。
+
+`agents/ghj/SELECTION.json`仅是按开放验证规则锁定候选，不能替代人工Champion晋级。协议配置的phase字段随哈希冻结，实际活动进度以HANDOFF、COMPLETION和已发布矩阵记录为准，不能仅凭phase字段判断正式实验是否完成。

@@ -1,0 +1,47 @@
+{
+  "status": "frozen",
+  "campaign_id": "confirmation-v2",
+  "kind": "development",
+  "stage": "confirmation",
+  "protocol_hash": "aa3551b6b85b6074adcac1786f587a728a0d62fc3e041c4c4e6625b2d3be2fc0",
+  "code_commit": "51b2cec2e529a2ceb2ba0ba8f8b4664a3ca5015b",
+  "planned_runs": 6,
+  "frozen_run_matrix": [
+    {
+      "config": "agents/ghj/configs/candidates/coverage-1-0.2.json",
+      "scenario": "natural_heterogeneous",
+      "seed": 11
+    },
+    {
+      "config": "agents/ghj/configs/candidates/coverage-1-0.2.json",
+      "scenario": "natural_heterogeneous",
+      "seed": 22
+    },
+    {
+      "config": "agents/ghj/configs/candidates/coverage-1-0.2.json",
+      "scenario": "natural_heterogeneous",
+      "seed": 33
+    },
+    {
+      "config": "configs/baselines/presets/scaffold-1.json",
+      "scenario": "natural_heterogeneous",
+      "seed": 11
+    },
+    {
+      "config": "configs/baselines/presets/scaffold-1.json",
+      "scenario": "natural_heterogeneous",
+      "seed": 22
+    },
+    {
+      "config": "configs/baselines/presets/scaffold-1.json",
+      "scenario": "natural_heterogeneous",
+      "seed": 33
+    }
+  ],
+  "budget_sim_seconds": 9.836224400345905,
+  "config_hashes": {
+    "agents/ghj/configs/candidates/coverage-1-0.2.json": "271c9beab213de035c4bb6ae73d2212aa75a8ed62d290042cedbd311309bd8bf",
+    "configs/baselines/presets/scaffold-1.json": "84ec4b4fa0188291b8cf4adec54c27f311ea9ab7c54cc91841284f7cd717975b"
+  },
+  "candidate_config_hash": "271c9beab213de035c4bb6ae73d2212aa75a8ed62d290042cedbd311309bd8bf"
+}

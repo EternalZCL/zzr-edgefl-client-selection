@@ -1,6 +1,6 @@
 """Public, training-only information exposed to candidate selection policies."""
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any, Mapping, Protocol, Sequence
 
 
@@ -22,6 +22,7 @@ class ClientHistory:
     participations: int = 0
     last_participation_sim_seconds: float | None = None
     last_observed_train_loss: float | None = None
+    last_observed_train_loss_rms: float | None = None
 
 
 @dataclass(frozen=True)
@@ -29,6 +30,7 @@ class RoundFeedback:
     selected_clients: tuple[int, ...]
     sim_seconds_used: float
     observed_train_losses: Mapping[int, float]
+    observed_train_loss_rms: Mapping[int, float] = field(default_factory=dict)
 
 
 class SelectionPolicy(Protocol):

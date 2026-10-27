@@ -4,6 +4,32 @@
 
 仅展示当前冻结协议下主场景、完整 B 与完整开发种子的结果；不自动晋级。
 
-暂无可入榜的真实完整实验。
-
-当前仍处于基础建设阶段；就绪阻碍见 GLOBAL_STATUS.md。
+| 排名 | 方法 | 工作区 | 平均 Macro-F1 | 标准差 | 实现 commit / 配置 | run IDs |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | ghj_coverage | ghj | 0.902929 | 0.008422 | 51b2cec2e529 / f9dda893a38a | ghj-dev-search-v2-067, ghj-dev-search-v2-068, ghj-dev-search-v2-069 |
+| 2 | scaffold_uniform | ghj | 0.901604 | 0.002811 | 51b2cec2e529 / 84ec4b4fa018 | ghj-dev-search-v2-025, ghj-dev-search-v2-026, ghj-dev-search-v2-027 |
+| 3 | ghj_coverage | ghj | 0.900373 | 0.003851 | 51b2cec2e529 / 640562065d43 | ghj-dev-search-v2-079, ghj-dev-search-v2-080, ghj-dev-search-v2-081 |
+| 4 | fedavg_u_oort | ghj | 0.899201 | 0.001640 | 51b2cec2e529 / 97c072aa030a | ghj-dev-search-v2-055, ghj-dev-search-v2-056, ghj-dev-search-v2-057 |
+| 5 | fedavg_u_fast_random | ghj | 0.898730 | 0.001959 | 51b2cec2e529 / 60d936f7808a | ghj-dev-search-v2-034, ghj-dev-search-v2-035, ghj-dev-search-v2-036 |
+| 6 | ghj_coverage | ghj | 0.898593 | 0.007427 | 51b2cec2e529 / 271c9beab213 | ghj-dev-search-v2-070, ghj-dev-search-v2-071, ghj-dev-search-v2-072 |
+| 7 | fedavg_u_oort | ghj | 0.898361 | 0.009035 | 51b2cec2e529 / 4c529907aecf | ghj-dev-search-v2-046, ghj-dev-search-v2-047, ghj-dev-search-v2-048 |
+| 8 | ghj_coverage | ghj | 0.898234 | 0.005487 | 51b2cec2e529 / a6cc300aba1c | ghj-dev-search-v2-073, ghj-dev-search-v2-074, ghj-dev-search-v2-075 |
+| 9 | ghj_coverage | ghj | 0.898141 | 0.003391 | 51b2cec2e529 / 11d614915ea8 | ghj-dev-search-v2-076, ghj-dev-search-v2-077, ghj-dev-search-v2-078 |
+| 10 | fedavg_u_fast_random | ghj | 0.897759 | 0.007351 | 51b2cec2e529 / d69ba7654833 | ghj-dev-search-v2-031, ghj-dev-search-v2-032, ghj-dev-search-v2-033 |
+| 11 | fedavg_u_oort | ghj | 0.897678 | 0.001584 | 51b2cec2e529 / 88fc0be0a13d | ghj-dev-search-v2-052, ghj-dev-search-v2-053, ghj-dev-search-v2-054 |
+| 12 | fedavg_u_oort | ghj | 0.897369 | 0.007102 | 51b2cec2e529 / f5cf3eb0c973 | ghj-dev-search-v2-043, ghj-dev-search-v2-044, ghj-dev-search-v2-045 |
+| 13 | fedprox_u_uniform | ghj | 0.896832 | 0.002020 | 51b2cec2e529 / 29dca52bdb54 | ghj-dev-search-v2-010, ghj-dev-search-v2-011, ghj-dev-search-v2-012 |
+| 14 | fedprox_u_uniform | ghj | 0.895975 | 0.004079 | 51b2cec2e529 / 454e2edaeb1d | ghj-dev-search-v2-019, ghj-dev-search-v2-020, ghj-dev-search-v2-021 |
+| 15 | ghj_coverage | ghj | 0.895764 | 0.012765 | 51b2cec2e529 / 26f4fe1ea98c | ghj-dev-search-v2-064, ghj-dev-search-v2-065, ghj-dev-search-v2-066 |
+| 16 | fedavg_u_oort | ghj | 0.895035 | 0.009268 | 51b2cec2e529 / 0491e9ddb5a7 | ghj-dev-search-v2-061, ghj-dev-search-v2-062, ghj-dev-search-v2-063 |
+| 17 | fedavg_u_fast_random | ghj | 0.895034 | 0.004246 | 51b2cec2e529 / 4b662118031c | ghj-dev-search-v2-037, ghj-dev-search-v2-038, ghj-dev-search-v2-039 |
+| 18 | fedprox_u_uniform | ghj | 0.895003 | 0.002541 | 51b2cec2e529 / 32316e28ca08 | ghj-dev-search-v2-016, ghj-dev-search-v2-017, ghj-dev-search-v2-018 |
+| 19 | fedprox_u_uniform | ghj | 0.894558 | 0.002475 | 51b2cec2e529 / 129bbbb4269a | ghj-dev-search-v2-013, ghj-dev-search-v2-014, ghj-dev-search-v2-015 |
+| 20 | fedavg_u_round_robin | ghj | 0.894504 | 0.002930 | 51b2cec2e529 / ea1d16e21f32 | ghj-dev-search-v2-004, ghj-dev-search-v2-005, ghj-dev-search-v2-006 |
+| 21 | fedavg_u_oort | ghj | 0.893239 | 0.002725 | 51b2cec2e529 / 09700c23d4bf | ghj-dev-search-v2-049, ghj-dev-search-v2-050, ghj-dev-search-v2-051 |
+| 22 | scaffold_uniform | ghj | 0.893078 | 0.003828 | 51b2cec2e529 / 980b77e95191 | ghj-dev-search-v2-022, ghj-dev-search-v2-023, ghj-dev-search-v2-024 |
+| 23 | fedavg_u_oort | ghj | 0.892173 | 0.003623 | 51b2cec2e529 / 1dc302f21e70 | ghj-dev-search-v2-040, ghj-dev-search-v2-041, ghj-dev-search-v2-042 |
+| 24 | fedavg_u_uniform | ghj | 0.889707 | 0.007288 | 51b2cec2e529 / 421924c74107 | ghj-dev-search-v2-001, ghj-dev-search-v2-002, ghj-dev-search-v2-003 |
+| 25 | fedprox_u_uniform | ghj | 0.889707 | 0.007288 | 51b2cec2e529 / d5fa755bdddc | ghj-dev-search-v2-007, ghj-dev-search-v2-008, ghj-dev-search-v2-009 |
+| 26 | fedavg_u_oort | ghj | 0.889612 | 0.007646 | 51b2cec2e529 / 79ed97a718d8 | ghj-dev-search-v2-058, ghj-dev-search-v2-059, ghj-dev-search-v2-060 |
+| 27 | fedavg_u_fast_random | ghj | 0.885686 | 0.008206 | 51b2cec2e529 / 00b11126cd56 | ghj-dev-search-v2-028, ghj-dev-search-v2-029, ghj-dev-search-v2-030 |

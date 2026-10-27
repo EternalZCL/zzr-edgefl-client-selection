@@ -1,7 +1,7 @@
 {
-  "protocol_version": "hapt-v1-bootstrap",
-  "status": "draft",
-  "phase": "bootstrap",
+  "protocol_version": "hapt-v3-ghj-costs",
+  "status": "frozen",
+  "phase": "development",
   "dataset": {
     "name": "UCI HAPT",
     "audit_status": "ready",
@@ -27,7 +27,7 @@
     "local_steps": 4,
     "batch_size": 16,
     "optimizer": "sgd",
-    "initial_learning_rate": 0.03,
+    "initial_learning_rate": 0.1,
     "aggregation": "equal_client_weight",
     "warmup_rounds": 5
   },
@@ -52,7 +52,7 @@
       5
     ],
     "zero_division": 0,
-    "budget_sim_seconds": null,
+    "budget_sim_seconds": 9.836224400345905,
     "primary_scenario": "natural_heterogeneous",
     "development_seeds": [
       11,
@@ -66,7 +66,13 @@
       104,
       105
     ],
-    "minimum_meaningful_delta": null
+    "minimum_meaningful_delta": 0.005,
+    "curve_budget_fractions": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ]
   },
   "scenarios": [
     "near_iid_homogeneous",

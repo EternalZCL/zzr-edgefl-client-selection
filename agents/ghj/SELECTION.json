@@ -1,0 +1,573 @@
+{
+  "status": "candidate_frozen_before_confirmation",
+  "code_commit": "51b2cec2e529a2ceb2ba0ba8f8b4664a3ca5015b",
+  "protocol_hash": "aa3551b6b85b6074adcac1786f587a728a0d62fc3e041c4c4e6625b2d3be2fc0",
+  "baseline_selection": [
+    {
+      "config": "configs/baselines/presets/uniform.json",
+      "method_id": "fedavg_u_uniform",
+      "mean": 0.8897065012873836,
+      "sd": 0.007288199257142796,
+      "run_ids": [
+        "ghj-dev-search-v2-001",
+        "ghj-dev-search-v2-002",
+        "ghj-dev-search-v2-003"
+      ],
+      "scores_by_seed": {
+        "11": 0.883671406208171,
+        "22": 0.8876445735636912,
+        "33": 0.8978035240902887
+      }
+    },
+    {
+      "config": "configs/baselines/presets/fedprox-0.001.json",
+      "method_id": "fedprox_u_uniform",
+      "mean": 0.896832102728281,
+      "sd": 0.002019956080810304,
+      "run_ids": [
+        "ghj-dev-search-v2-010",
+        "ghj-dev-search-v2-011",
+        "ghj-dev-search-v2-012"
+      ],
+      "scores_by_seed": {
+        "11": 0.8951533534834619,
+        "22": 0.8962691317092144,
+        "33": 0.8990738229921666
+      }
+    },
+    {
+      "config": "configs/baselines/presets/scaffold-1.json",
+      "method_id": "scaffold_uniform",
+      "mean": 0.9016038042386081,
+      "sd": 0.0028109964707275815,
+      "run_ids": [
+        "ghj-dev-search-v2-025",
+        "ghj-dev-search-v2-026",
+        "ghj-dev-search-v2-027"
+      ],
+      "scores_by_seed": {
+        "11": 0.903616885565415,
+        "22": 0.9028023324714501,
+        "33": 0.8983921946789593
+      }
+    },
+    {
+      "config": "configs/baselines/presets/round_robin.json",
+      "method_id": "fedavg_u_round_robin",
+      "mean": 0.894504338143315,
+      "sd": 0.002929795597429809,
+      "run_ids": [
+        "ghj-dev-search-v2-004",
+        "ghj-dev-search-v2-005",
+        "ghj-dev-search-v2-006"
+      ],
+      "scores_by_seed": {
+        "11": 0.8911507315908145,
+        "22": 0.8965667507568336,
+        "33": 0.8957955320822968
+      }
+    },
+    {
+      "config": "configs/baselines/presets/fast-0.5.json",
+      "method_id": "fedavg_u_fast_random",
+      "mean": 0.8987297358494694,
+      "sd": 0.0019594869144581245,
+      "run_ids": [
+        "ghj-dev-search-v2-034",
+        "ghj-dev-search-v2-035",
+        "ghj-dev-search-v2-036"
+      ],
+      "scores_by_seed": {
+        "11": 0.8995680087580915,
+        "22": 0.900130644137997,
+        "33": 0.8964905546523194
+      }
+    },
+    {
+      "config": "configs/baselines/presets/oort-0.3-5-original.json",
+      "method_id": "fedavg_u_oort",
+      "mean": 0.899201286377499,
+      "sd": 0.0016398053188526641,
+      "run_ids": [
+        "ghj-dev-search-v2-055",
+        "ghj-dev-search-v2-056",
+        "ghj-dev-search-v2-057"
+      ],
+      "scores_by_seed": {
+        "11": 0.8974627537495184,
+        "22": 0.8994208683759768,
+        "33": 0.9007202370070017
+      }
+    }
+  ],
+  "candidate": {
+    "config": "agents/ghj/configs/candidates/coverage-1-0.2.json",
+    "method_id": "ghj_coverage",
+    "mean": 0.8985929061472371,
+    "sd": 0.007427198856956105,
+    "run_ids": [
+      "ghj-dev-search-v2-070",
+      "ghj-dev-search-v2-071",
+      "ghj-dev-search-v2-072"
+    ],
+    "scores_by_seed": {
+      "11": 0.8902488401529322,
+      "22": 0.9010486335559864,
+      "33": 0.9044812447327926
+    }
+  },
+  "strongest_baseline": {
+    "config": "configs/baselines/presets/scaffold-1.json",
+    "method_id": "scaffold_uniform",
+    "mean": 0.9016038042386081,
+    "sd": 0.0028109964707275815,
+    "run_ids": [
+      "ghj-dev-search-v2-025",
+      "ghj-dev-search-v2-026",
+      "ghj-dev-search-v2-027"
+    ],
+    "scores_by_seed": {
+      "11": 0.903616885565415,
+      "22": 0.9028023324714501,
+      "33": 0.8983921946789593
+    }
+  },
+  "all_search_results": [
+    {
+      "config": "configs/baselines/presets/uniform.json",
+      "method_id": "fedavg_u_uniform",
+      "mean": 0.8897065012873836,
+      "sd": 0.007288199257142796,
+      "run_ids": [
+        "ghj-dev-search-v2-001",
+        "ghj-dev-search-v2-002",
+        "ghj-dev-search-v2-003"
+      ],
+      "scores_by_seed": {
+        "11": 0.883671406208171,
+        "22": 0.8876445735636912,
+        "33": 0.8978035240902887
+      }
+    },
+    {
+      "config": "configs/baselines/presets/round_robin.json",
+      "method_id": "fedavg_u_round_robin",
+      "mean": 0.894504338143315,
+      "sd": 0.002929795597429809,
+      "run_ids": [
+        "ghj-dev-search-v2-004",
+        "ghj-dev-search-v2-005",
+        "ghj-dev-search-v2-006"
+      ],
+      "scores_by_seed": {
+        "11": 0.8911507315908145,
+        "22": 0.8965667507568336,
+        "33": 0.8957955320822968
+      }
+    },
+    {
+      "config": "configs/baselines/presets/fedprox-0.json",
+      "method_id": "fedprox_u_uniform",
+      "mean": 0.8897065012873836,
+      "sd": 0.007288199257142796,
+      "run_ids": [
+        "ghj-dev-search-v2-007",
+        "ghj-dev-search-v2-008",
+        "ghj-dev-search-v2-009"
+      ],
+      "scores_by_seed": {
+        "11": 0.883671406208171,
+        "22": 0.8876445735636912,
+        "33": 0.8978035240902887
+      }
+    },
+    {
+      "config": "configs/baselines/presets/fedprox-0.001.json",
+      "method_id": "fedprox_u_uniform",
+      "mean": 0.896832102728281,
+      "sd": 0.002019956080810304,
+      "run_ids": [
+        "ghj-dev-search-v2-010",
+        "ghj-dev-search-v2-011",
+        "ghj-dev-search-v2-012"
+      ],
+      "scores_by_seed": {
+        "11": 0.8951533534834619,
+        "22": 0.8962691317092144,
+        "33": 0.8990738229921666
+      }
+    },
+    {
+      "config": "configs/baselines/presets/fedprox-0.01.json",
+      "method_id": "fedprox_u_uniform",
+      "mean": 0.8945579108707558,
+      "sd": 0.0024748075630083065,
+      "run_ids": [
+        "ghj-dev-search-v2-013",
+        "ghj-dev-search-v2-014",
+        "ghj-dev-search-v2-015"
+      ],
+      "scores_by_seed": {
+        "11": 0.8943621076922159,
+        "22": 0.8971248038148867,
+        "33": 0.8921868211051647
+      }
+    },
+    {
+      "config": "configs/baselines/presets/fedprox-0.1.json",
+      "method_id": "fedprox_u_uniform",
+      "mean": 0.8950030675659125,
+      "sd": 0.002541195906669094,
+      "run_ids": [
+        "ghj-dev-search-v2-016",
+        "ghj-dev-search-v2-017",
+        "ghj-dev-search-v2-018"
+      ],
+      "scores_by_seed": {
+        "11": 0.8956975777776861,
+        "22": 0.8971248038148867,
+        "33": 0.8921868211051647
+      }
+    },
+    {
+      "config": "configs/baselines/presets/fedprox-1.json",
+      "method_id": "fedprox_u_uniform",
+      "mean": 0.8959748930155726,
+      "sd": 0.004079431228752434,
+      "run_ids": [
+        "ghj-dev-search-v2-019",
+        "ghj-dev-search-v2-020",
+        "ghj-dev-search-v2-021"
+      ],
+      "scores_by_seed": {
+        "11": 0.900293726395574,
+        "22": 0.8954441315459791,
+        "33": 0.8921868211051647
+      }
+    },
+    {
+      "config": "configs/baselines/presets/scaffold-0.5.json",
+      "method_id": "scaffold_uniform",
+      "mean": 0.8930778513120518,
+      "sd": 0.0038280194943510547,
+      "run_ids": [
+        "ghj-dev-search-v2-022",
+        "ghj-dev-search-v2-023",
+        "ghj-dev-search-v2-024"
+      ],
+      "scores_by_seed": {
+        "11": 0.8935443414029024,
+        "22": 0.8966512482901802,
+        "33": 0.8890379642430727
+      }
+    },
+    {
+      "config": "configs/baselines/presets/scaffold-1.json",
+      "method_id": "scaffold_uniform",
+      "mean": 0.9016038042386081,
+      "sd": 0.0028109964707275815,
+      "run_ids": [
+        "ghj-dev-search-v2-025",
+        "ghj-dev-search-v2-026",
+        "ghj-dev-search-v2-027"
+      ],
+      "scores_by_seed": {
+        "11": 0.903616885565415,
+        "22": 0.9028023324714501,
+        "33": 0.8983921946789593
+      }
+    },
+    {
+      "config": "configs/baselines/presets/fast-0.json",
+      "method_id": "fedavg_u_fast_random",
+      "mean": 0.8856861976743803,
+      "sd": 0.008205988085518227,
+      "run_ids": [
+        "ghj-dev-search-v2-028",
+        "ghj-dev-search-v2-029",
+        "ghj-dev-search-v2-030"
+      ],
+      "scores_by_seed": {
+        "11": 0.8835188316585375,
+        "22": 0.8947583181937737,
+        "33": 0.8787814431708295
+      }
+    },
+    {
+      "config": "configs/baselines/presets/fast-0.2.json",
+      "method_id": "fedavg_u_fast_random",
+      "mean": 0.8977591843326072,
+      "sd": 0.007350911501413605,
+      "run_ids": [
+        "ghj-dev-search-v2-031",
+        "ghj-dev-search-v2-032",
+        "ghj-dev-search-v2-033"
+      ],
+      "scores_by_seed": {
+        "11": 0.8894003327826857,
+        "22": 0.9032165383044539,
+        "33": 0.9006606819106819
+      }
+    },
+    {
+      "config": "configs/baselines/presets/fast-0.5.json",
+      "method_id": "fedavg_u_fast_random",
+      "mean": 0.8987297358494694,
+      "sd": 0.0019594869144581245,
+      "run_ids": [
+        "ghj-dev-search-v2-034",
+        "ghj-dev-search-v2-035",
+        "ghj-dev-search-v2-036"
+      ],
+      "scores_by_seed": {
+        "11": 0.8995680087580915,
+        "22": 0.900130644137997,
+        "33": 0.8964905546523194
+      }
+    },
+    {
+      "config": "configs/baselines/presets/fast-1.json",
+      "method_id": "fedavg_u_fast_random",
+      "mean": 0.8950340245457634,
+      "sd": 0.004245887718706552,
+      "run_ids": [
+        "ghj-dev-search-v2-037",
+        "ghj-dev-search-v2-038",
+        "ghj-dev-search-v2-039"
+      ],
+      "scores_by_seed": {
+        "11": 0.8949886108187192,
+        "22": 0.8908110258477905,
+        "33": 0.8993024369707806
+      }
+    },
+    {
+      "config": "configs/baselines/presets/oort-0.1-5-normalized.json",
+      "method_id": "fedavg_u_oort",
+      "mean": 0.8921731018809193,
+      "sd": 0.003622947984365029,
+      "run_ids": [
+        "ghj-dev-search-v2-040",
+        "ghj-dev-search-v2-041",
+        "ghj-dev-search-v2-042"
+      ],
+      "scores_by_seed": {
+        "11": 0.8938969247270331,
+        "22": 0.8880101181784618,
+        "33": 0.8946122627372628
+      }
+    },
+    {
+      "config": "configs/baselines/presets/oort-0.1-5-original.json",
+      "method_id": "fedavg_u_oort",
+      "mean": 0.897368766000115,
+      "sd": 0.00710199047772735,
+      "run_ids": [
+        "ghj-dev-search-v2-043",
+        "ghj-dev-search-v2-044",
+        "ghj-dev-search-v2-045"
+      ],
+      "scores_by_seed": {
+        "11": 0.8896393123715945,
+        "22": 0.8988607457357457,
+        "33": 0.9036062398930046
+      }
+    },
+    {
+      "config": "configs/baselines/presets/oort-0.1-10-normalized.json",
+      "method_id": "fedavg_u_oort",
+      "mean": 0.8983605941081432,
+      "sd": 0.009035014607669714,
+      "run_ids": [
+        "ghj-dev-search-v2-046",
+        "ghj-dev-search-v2-047",
+        "ghj-dev-search-v2-048"
+      ],
+      "scores_by_seed": {
+        "11": 0.9037613244598539,
+        "22": 0.9033904018095195,
+        "33": 0.8879300560550561
+      }
+    },
+    {
+      "config": "configs/baselines/presets/oort-0.1-10-original.json",
+      "method_id": "fedavg_u_oort",
+      "mean": 0.8932388032265483,
+      "sd": 0.002724969358195085,
+      "run_ids": [
+        "ghj-dev-search-v2-049",
+        "ghj-dev-search-v2-050",
+        "ghj-dev-search-v2-051"
+      ],
+      "scores_by_seed": {
+        "11": 0.8900930510121686,
+        "22": 0.8948720138793668,
+        "33": 0.8947513447881095
+      }
+    },
+    {
+      "config": "configs/baselines/presets/oort-0.3-5-normalized.json",
+      "method_id": "fedavg_u_oort",
+      "mean": 0.8976782902811249,
+      "sd": 0.0015836017250510505,
+      "run_ids": [
+        "ghj-dev-search-v2-052",
+        "ghj-dev-search-v2-053",
+        "ghj-dev-search-v2-054"
+      ],
+      "scores_by_seed": {
+        "11": 0.8968536174562389,
+        "22": 0.896677215758098,
+        "33": 0.8995040376290376
+      }
+    },
+    {
+      "config": "configs/baselines/presets/oort-0.3-5-original.json",
+      "method_id": "fedavg_u_oort",
+      "mean": 0.899201286377499,
+      "sd": 0.0016398053188526641,
+      "run_ids": [
+        "ghj-dev-search-v2-055",
+        "ghj-dev-search-v2-056",
+        "ghj-dev-search-v2-057"
+      ],
+      "scores_by_seed": {
+        "11": 0.8974627537495184,
+        "22": 0.8994208683759768,
+        "33": 0.9007202370070017
+      }
+    },
+    {
+      "config": "configs/baselines/presets/oort-0.3-10-normalized.json",
+      "method_id": "fedavg_u_oort",
+      "mean": 0.8896118294473557,
+      "sd": 0.007646417056351037,
+      "run_ids": [
+        "ghj-dev-search-v2-058",
+        "ghj-dev-search-v2-059",
+        "ghj-dev-search-v2-060"
+      ],
+      "scores_by_seed": {
+        "11": 0.885555747357218,
+        "22": 0.8984316922184569,
+        "33": 0.8848480487663923
+      }
+    },
+    {
+      "config": "configs/baselines/presets/oort-0.3-10-original.json",
+      "method_id": "fedavg_u_oort",
+      "mean": 0.8950349360018394,
+      "sd": 0.0092684967700513,
+      "run_ids": [
+        "ghj-dev-search-v2-061",
+        "ghj-dev-search-v2-062",
+        "ghj-dev-search-v2-063"
+      ],
+      "scores_by_seed": {
+        "11": 0.8973042818477097,
+        "22": 0.8848425269130444,
+        "33": 0.902957999244764
+      }
+    },
+    {
+      "config": "agents/ghj/configs/candidates/coverage-1-0.05.json",
+      "method_id": "ghj_coverage",
+      "mean": 0.8957638210691841,
+      "sd": 0.012765280115753962,
+      "run_ids": [
+        "ghj-dev-search-v2-064",
+        "ghj-dev-search-v2-065",
+        "ghj-dev-search-v2-066"
+      ],
+      "scores_by_seed": {
+        "11": 0.883748396426415,
+        "22": 0.9091657577869551,
+        "33": 0.8943773089941821
+      }
+    },
+    {
+      "config": "agents/ghj/configs/candidates/coverage-1-0.1.json",
+      "method_id": "ghj_coverage",
+      "mean": 0.9029286073719152,
+      "sd": 0.008421590033809974,
+      "run_ids": [
+        "ghj-dev-search-v2-067",
+        "ghj-dev-search-v2-068",
+        "ghj-dev-search-v2-069"
+      ],
+      "scores_by_seed": {
+        "11": 0.9035519942428512,
+        "22": 0.9110211819179209,
+        "33": 0.8942126459549733
+      }
+    },
+    {
+      "config": "agents/ghj/configs/candidates/coverage-1-0.2.json",
+      "method_id": "ghj_coverage",
+      "mean": 0.8985929061472371,
+      "sd": 0.007427198856956105,
+      "run_ids": [
+        "ghj-dev-search-v2-070",
+        "ghj-dev-search-v2-071",
+        "ghj-dev-search-v2-072"
+      ],
+      "scores_by_seed": {
+        "11": 0.8902488401529322,
+        "22": 0.9010486335559864,
+        "33": 0.9044812447327926
+      }
+    },
+    {
+      "config": "agents/ghj/configs/candidates/coverage-2-0.05.json",
+      "method_id": "ghj_coverage",
+      "mean": 0.898234384971272,
+      "sd": 0.005487289058880188,
+      "run_ids": [
+        "ghj-dev-search-v2-073",
+        "ghj-dev-search-v2-074",
+        "ghj-dev-search-v2-075"
+      ],
+      "scores_by_seed": {
+        "11": 0.8922733489402119,
+        "22": 0.9030749777952464,
+        "33": 0.8993548281783574
+      }
+    },
+    {
+      "config": "agents/ghj/configs/candidates/coverage-2-0.1.json",
+      "method_id": "ghj_coverage",
+      "mean": 0.8981409794428594,
+      "sd": 0.0033906400988550326,
+      "run_ids": [
+        "ghj-dev-search-v2-076",
+        "ghj-dev-search-v2-077",
+        "ghj-dev-search-v2-078"
+      ],
+      "scores_by_seed": {
+        "11": 0.8944467027497213,
+        "22": 0.90111091789001,
+        "33": 0.8988653176888471
+      }
+    },
+    {
+      "config": "agents/ghj/configs/candidates/coverage-2-0.2.json",
+      "method_id": "ghj_coverage",
+      "mean": 0.9003730574655053,
+      "sd": 0.0038507670280889753,
+      "run_ids": [
+        "ghj-dev-search-v2-079",
+        "ghj-dev-search-v2-080",
+        "ghj-dev-search-v2-081"
+      ],
+      "scores_by_seed": {
+        "11": 0.8968457005365572,
+        "22": 0.8997922271271662,
+        "33": 0.9044812447327926
+      }
+    }
+  ],
+  "candidate_advantage": -0.003010898091371006,
+  "delta": 0.005,
+  "no_retuning_after_confirmation": true,
+  "team_review": "pending; no Champion promotion performed"
+}

@@ -1,0 +1,9 @@
+{
+  "method_id": "fedavg_u_oort",
+  "selector": "oort",
+  "selector_config": {
+    "exploration": 0.1,
+    "pacer_window": 5,
+    "utility": "normalized"
+  }
+}
