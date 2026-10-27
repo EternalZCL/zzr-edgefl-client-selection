@@ -1,5 +1,5 @@
 {
-  "protocol_version": "hapt-v2-ghj-cpu",
+  "protocol_version": "hapt-v3-ghj-costs",
   "status": "frozen",
   "phase": "development",
   "dataset": {
