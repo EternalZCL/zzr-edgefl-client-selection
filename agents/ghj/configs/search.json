@@ -1,10 +1,47 @@
 {
   "owner": "ghj",
-  "method_id": "ghj-uniform-starter",
-  "policy_path": "agents/ghj/policy.py",
-  "status": "template_not_run",
-  "parent_method": "uniform_selector",
-  "hypothesis_id": null,
-  "fidelity": "smoke",
-  "note": "Shared benchmark config applies; no training has been run."
+  "hypothesis_id": "ghj-h001",
+  "status": "preregistered_before_search",
+  "baseline_configurations": [
+    "configs/baselines/presets/uniform.json",
+    "configs/baselines/presets/round_robin.json",
+    "configs/baselines/presets/fedprox-0.json",
+    "configs/baselines/presets/fedprox-0.001.json",
+    "configs/baselines/presets/fedprox-0.01.json",
+    "configs/baselines/presets/fedprox-0.1.json",
+    "configs/baselines/presets/fedprox-1.json",
+    "configs/baselines/presets/scaffold-0.5.json",
+    "configs/baselines/presets/scaffold-1.json",
+    "configs/baselines/presets/fast-0.json",
+    "configs/baselines/presets/fast-0.2.json",
+    "configs/baselines/presets/fast-0.5.json",
+    "configs/baselines/presets/fast-1.json",
+    "configs/baselines/presets/oort-0.1-5-normalized.json",
+    "configs/baselines/presets/oort-0.1-5-original.json",
+    "configs/baselines/presets/oort-0.1-10-normalized.json",
+    "configs/baselines/presets/oort-0.1-10-original.json",
+    "configs/baselines/presets/oort-0.3-5-normalized.json",
+    "configs/baselines/presets/oort-0.3-5-original.json",
+    "configs/baselines/presets/oort-0.3-10-normalized.json",
+    "configs/baselines/presets/oort-0.3-10-original.json"
+  ],
+  "candidate_configurations": [
+    "agents/ghj/configs/candidates/coverage-1-0.05.json",
+    "agents/ghj/configs/candidates/coverage-1-0.1.json",
+    "agents/ghj/configs/candidates/coverage-1-0.2.json",
+    "agents/ghj/configs/candidates/coverage-2-0.05.json",
+    "agents/ghj/configs/candidates/coverage-2-0.1.json",
+    "agents/ghj/configs/candidates/coverage-2-0.2.json"
+  ],
+  "primary_scenario": "natural_heterogeneous",
+  "development_seeds": [
+    11,
+    22,
+    33
+  ],
+  "selection_rule": "Highest mean full-B open-validation Macro-F1 within each baseline family; ties prefer listed order. Candidate within minimum delta of best prefers fewer coverage slots then larger wait fraction.",
+  "confirmation_rule": "One fixed candidate plus strongest selected baseline, seeds 11/22/33, confirmation once; no retuning from confirmation.",
+  "final_rule": "Always evaluate the frozen candidate, even if it loses; 175 core tests with seeds 101..105.",
+  "profiling_rule": "LR 0.01/0.03/0.1/0.3 at 100/200/400 rounds, three dev seeds; choose shared LR at 200 rounds; B is mean 200-round heterogeneous Uniform time; delta=max(0.005, baseline seed SD/sqrt(3)).",
+  "limitations": "Oort adaptation is documented, not an exact reproduction. Local freeze does not claim team review or automatic Champion promotion."
 }

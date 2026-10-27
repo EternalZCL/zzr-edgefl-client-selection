@@ -23,11 +23,5 @@
 - Absolute simulated time budget B is not calibrated.
 - Minimum meaningful improvement is not preregistered.
 - Measured compute/server costs and profiling evidence are missing.
-- Baseline pending: scaffold_uniform
-- Baseline pending: fedavg_u_round_robin
-- Baseline pending: fedavg_u_fast_random
-- Baseline pending: fedavg_u_oort
-- Baseline pending: local_only
-- Baseline pending: centralized
 
 本视图只汇总当前检出的记录；进行中任务见个人 HANDOFF，不代表远端其他分支或进程实时状态。

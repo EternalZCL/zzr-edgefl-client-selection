@@ -209,6 +209,7 @@ class PreparedData:
     validation: dict
     manifest: dict
     scenario: str
+    evaluation_stage: str = "development"
 
 
 def redistribute_near_iid(train: dict, seed: int) -> dict:
@@ -253,27 +254,44 @@ def redistribute_near_iid(train: dict, seed: int) -> dict:
     return result
 
 
-def load_prepared(root: Path, *, scenario: str, evaluation_stage: str = "development", seed: int = 11) -> PreparedData:
+def load_prepared(root: Path, *, scenario: str, evaluation_stage: str = "development", seed: int = 11,
+                  campaign: Path | None = None) -> PreparedData:
     import torch
 
     config, manifest = load_json(root / CONFIG), load_json(root / MANIFEST)
+    if evaluation_stage not in {"development", "confirmation", "test"}:
+        raise ValueError("Unknown evaluation stage.")
     if evaluation_stage != "development":
-        raise ValueError("This bootstrap runner only opens search validation; reserved stages are disabled.")
+        from flbench.repository import protocol_hash
+        if campaign is None:
+            raise ValueError("Reserved labels require an explicitly frozen campaign.")
+        access = load_json(campaign)
+        if (access.get("status") != "frozen" or access.get("stage") != evaluation_stage
+                or access.get("protocol_hash") != protocol_hash(root)
+                or not access.get("frozen_run_matrix") or not access.get("candidate_config_hash")):
+            raise ValueError("Reserved-stage campaign is not frozen for this protocol.")
     if scenario not in config["scenarios"] or manifest["status"] != "ready":
         raise ValueError("Unknown scenario or HAPT data not prepared.")
     train, validation = {}, {}
-    allowed = set(manifest["split_contract"]["search_validation_clients"])
+    if evaluation_stage == "development":
+        allowed = set(manifest["split_contract"]["search_validation_clients"])
+    elif evaluation_stage == "confirmation":
+        allowed = set(manifest["split_contract"]["confirmation_validation_clients"])
+    else:
+        allowed = {item["client_id"] for item in manifest["clients"]}
     for summary in manifest["clients"]:
         client = summary["client_id"]
         for split, destination in (("train", train), ("validation", validation)):
             if split == "validation" and client not in allowed:
                 continue
-            path = root / CACHE / f"client-{client:02d}" / f"{split}.npz"
+            actual_split = "test" if evaluation_stage == "test" and split == "validation" else split
+            path = root / CACHE / f"client-{client:02d}" / f"{actual_split}.npz"
             with np.load(path, allow_pickle=False) as stored:
                 x, y = stored["x"], stored["y"]
-            if array_hash(x, y) != summary["splits"][split]["array_sha256"]:
+            if array_hash(x, y) != summary["splits"][actual_split]["array_sha256"]:
                 raise ValueError(f"Modified cached split: {client}/{split}")
             destination[client] = (torch.from_numpy(x.copy()), torch.from_numpy(y.copy()))
     if scenario.startswith("near_iid"):
         train = redistribute_near_iid(train, seed)
-    return PreparedData(train=train, validation=validation, manifest=manifest, scenario=scenario)
+    return PreparedData(train=train, validation=validation, manifest=manifest, scenario=scenario,
+                        evaluation_stage=evaluation_stage)

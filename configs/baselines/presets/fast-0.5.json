@@ -1,0 +1,7 @@
+{
+  "method_id": "fedavg_u_fast_random",
+  "selector": "fast_random",
+  "selector_config": {
+    "exploration": 0.5
+  }
+}

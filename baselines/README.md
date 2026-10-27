@@ -1,14 +1,7 @@
-# 基线实现清单
+# 基线
 
-| 方法 | 当前状态 |
-| --- | --- |
-| FedAvg-U + Uniform | `uniform.py` + `benchmark/trainer.py` / `simulator.py` 已接入真实数据开发链路 |
-| FedProx-U + Uniform | 共享 trainer 实现近端项；可短程运行，正式调参与对比待做 |
-| SCAFFOLD + Uniform | 待实现；控制变量计算与通信须计费 |
-| FedAvg-U + Randomized Round-Robin | 待实现 |
-| FedAvg-U + Fast/Random | 待实现 |
-| FedAvg-U + Oort | 待实现；保留原方法核心机制，记录适配差异 |
-| Local-only / Centralized | 待实现，作为解释性参考 |
+全部实现使用共享 HAPT、模型、训练曝光和计费规则：Uniform FedAvg-U、FedProx-U、SCAFFOLD option II、随机轮转、Fast/Random、Oort 有限适配。Local-only 与 Centralized 是等总训练 step 的解释性参考。
 
-配置索引为 `configs/baselines/catalog.json`。候选只修改选择器，其他训练规则固定。
-当前只完成随机选择的 FedAvg/FedProx 开发原型。短程 smoke 证明工程链路可用，不构成收敛质量、成熟方法对比或算法提升的证据。
+参数清单由 `flbench.planning initialize` 在首次校准前写入 `configs/baselines/presets/`；搜索时不重新初始化。完整设置、Oort 偏离作者实现的地方、控制变量公式和额外成本见根目录 PROTOCOL.md。
+
+数学与恢复测试：`uv run --locked --exact python -m unittest discover -s tests -v`。
