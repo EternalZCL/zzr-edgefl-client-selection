@@ -1,6 +1,6 @@
 # ghj交付与恢复
 
-本次完成ghj工作区的核心研究和公共基础设施。正式矩阵175/175完成，当前协议144次完整B开发、9次等轮诊断、6次确认全部保留；另含旧成本协议37次完成和1次中断invalid，共372个终态，及36次搜索前校准。
+本次完成ghj工作区的核心研究和公共基础设施。正式矩阵175/175完成，当前协议144次完整B开发、9次等轮诊断、6次确认全部保留；另含旧成本协议37次完成和1次中断invalid，共372个终态，及36次搜索前校准。分支已上传，草稿PR：https://github.com/EternalZCL/zzr-edgefl-client-selection/pull/1 。
 
 主条件候选Macro-F1为.867327，开发阶段预选SCAFFOLD为.874314，配对差-.0069866733，精确双侧符号翻转p=.4375。结论为未证实候选优势，完整报告保留负结果。
 
@@ -58,8 +58,6 @@ gh auth status
 powershell -ExecutionPolicy Bypass -File .\github-submit.ps1 -RepositoryPath 'D:\Projects\ghj-edgefl'
 ```
 
-脚本只推送codex/ghj-research-completion并复用/建立草稿PR；无权限时保留本地成果并报错。远端上传、PR链接及权限必须以真实执行结果为准，本次打包时账号尚未登录。
+脚本只推送codex/ghj-research-completion并复用/建立草稿PR；无权限时保留本地成果并报错。本次已使用zhengyan417的write权限上传分支、创建PR #1及草稿Release。Release地址为 https://github.com/EternalZCL/zzr-edgefl-client-selection/releases ，有仓库权限成员登录后可接收工件；草稿不是公开发布。资产和远端SHA-256校验结果见交付验收记录。
 
-成员邀请需维护者获得三位成员的真实GitHub用户名，在仓库Settings → Collaborators中发送邀请。main保护规则由有管理权限的维护者在Settings → Rules/Branches中设置：要求PR、至少一位审阅者、通过本仓库CI任务、禁止强制推送。先检查现有规则，避免覆盖团队已有设置。未登录、未收到成员用户名时不能假称这些动作已经完成。
-
-Champion仍为空；共享核心、科学证据、最终合并和晋级均留给真实团队审阅。其他成员的独立科研会话、235次可选增强及第二数据集没有冒称执行。
+成员邀请与仓库管理按用户最新指示不处理。Champion仍为空；共享核心、科学证据、最终合并和晋级均留给真实团队审阅。其他成员的独立科研会话、235次可选增强及第二数据集没有冒称执行。

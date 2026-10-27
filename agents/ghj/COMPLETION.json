@@ -52,17 +52,47 @@
     "delivery_instructions": "docs/ghj-delivery.md"
   },
   "external": {
-    "github_authenticated": false,
-    "branch_pushed": false,
-    "pr_url": null,
-    "collaborator_invitations": "pending_actual_usernames_and_permissions",
-    "branch_protection": "pending_maintainer_permissions",
+    "github_authenticated": true,
+    "branch_pushed": true,
+    "pr_url": "https://github.com/EternalZCL/zzr-edgefl-client-selection/pull/1",
+    "collaborator_invitations": "excluded_by_user",
+    "branch_protection": "excluded_by_user",
     "team_review": "pending",
-    "large_artifact_shared_uri": null
+    "large_artifact_shared_uri": "https://api.github.com/repos/EternalZCL/zzr-edgefl-client-selection/releases/425081385/assets",
+    "github_login": "zhengyan417",
+    "repository_permission": "WRITE",
+    "draft_release_url": "https://github.com/EternalZCL/zzr-edgefl-client-selection/releases",
+    "draft_release_id": 425081385,
+    "large_artifact_visibility": "draft_release_for_authorized_collaborators; final asset verification in delivery sidecar",
+    "draft_release_tag": "ghj-study-2026-10-27",
+    "draft_release_api_url": "https://api.github.com/repos/EternalZCL/zzr-edgefl-client-selection/releases/425081385"
   },
   "optional_not_executed": [
     "235-run enhanced matrix",
     "second independent dataset",
     "other members independent research sessions"
-  ]
+  ],
+  "delivery_restore": {
+    "status": "passed",
+    "source_delivery_commit": "516fad2107967cd29845c8d6a04911dc68e86e5c",
+    "checks": [
+      "all file hashes",
+      "git history and source commit",
+      "fresh exact environment",
+      "repository ready",
+      "generated views",
+      "all 372 archive hashes and identical report statistics",
+      "real-data SCAFFOLD bitwise recovery"
+    ]
+  },
+  "ci": {
+    "initial_linux": "passed",
+    "initial_windows": "failed: unresolved 8.3 TEMP alias in test fixture",
+    "test_only_fix_commit": "c4ecb3d0849a674afa0ec42cb696ca24d4ab1b48",
+    "latest_checks": "see PR #1 Checks",
+    "validated_commit": "c4ecb3d0849a674afa0ec42cb696ca24d4ab1b48",
+    "linux": "success",
+    "windows": "success",
+    "validation_url": "https://github.com/EternalZCL/zzr-edgefl-client-selection/actions/runs/40458458995"
+  }
 }

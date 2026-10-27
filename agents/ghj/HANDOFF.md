@@ -37,7 +37,9 @@
 
 ## 团队可见性与外部动作
 
-本机gh auth status显示未登录，尚未push本分支、创建PR、邀请成员或修改保护规则。不能把本地提交当作远端成果。PR草稿和维护者设置说明随交付提供；远端操作需实际登录/权限及成员用户名。Champion未晋级，团队人工审阅及合并仍待真实成员处理。
+已使用用户授权登录zhengyan417（仓库write），上传本分支并创建草稿PR #1：https://github.com/EternalZCL/zzr-edgefl-client-selection/pull/1 。完整工件交付使用草稿Release ghj-study-2026-10-27，地址：https://github.com/EternalZCL/zzr-edgefl-client-selection/releases 。草稿仅对有权限成员可见；资产上传及远端摘要校验以交付验收记录为准，不冒称公共发布。
+
+按用户最新指示，不再处理成员邀请与仓库管理。Champion未晋级，main未合并，团队人工审阅仍待真实成员处理。首轮CI Linux通过、Windows测试fixture遇TEMP短路径别名失败；c4ecb3d只规范测试根路径，不改数值代码或协议。CI最终状态见PR Checks。
 
 本地交付含八部分中文PDF/HTML/Markdown、六组PNG/SVG/PDF、CSV/JSON、全部逐轮工件和检查点、处理后缓存、完整Git bundle、源码ZIP及安全恢复脚本。仓库docs/ghj-study保留可审阅的报告/PNG；大工件不入Git。报告命令要求先取回全部artifacts：uv run --locked --exact python scripts/report_research.py --output artifacts/report。
 

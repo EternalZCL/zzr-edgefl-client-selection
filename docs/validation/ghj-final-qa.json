@@ -22,5 +22,28 @@
     "replacement_characters_in_extracted_text": 0,
     "sha256": "35b3de3aadb0b6fa13a2317ca59a4051ccf2d371b52d77e36217228fd5f551f9"
   },
-  "protocol_hash": "aa3551b6b85b6074adcac1786f587a728a0d62fc3e041c4c4e6625b2d3be2fc0"
+  "protocol_hash": "aa3551b6b85b6074adcac1786f587a728a0d62fc3e041c4c4e6625b2d3be2fc0",
+  "portable_restore": {
+    "status": "passed",
+    "source_delivery_commit": "516fad2107967cd29845c8d6a04911dc68e86e5c",
+    "checks": [
+      "all file hashes",
+      "git history and source commit",
+      "fresh exact environment",
+      "repository ready",
+      "generated views",
+      "all 372 archive hashes and identical report statistics",
+      "real-data SCAFFOLD bitwise recovery"
+    ]
+  },
+  "ci": {
+    "initial_linux": "passed",
+    "initial_windows": "failed: unresolved 8.3 TEMP alias in test fixture",
+    "test_only_fix_commit": "c4ecb3d0849a674afa0ec42cb696ca24d4ab1b48",
+    "latest_checks": "see PR #1 Checks",
+    "validated_commit": "c4ecb3d0849a674afa0ec42cb696ca24d4ab1b48",
+    "linux": "success",
+    "windows": "success",
+    "validation_url": "https://github.com/EternalZCL/zzr-edgefl-client-selection/actions/runs/40458458995"
+  }
 }
