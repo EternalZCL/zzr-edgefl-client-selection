@@ -1,0 +1,337 @@
+{
+  "status": "frozen",
+  "campaign_id": "dev-conditions-v2",
+  "kind": "development",
+  "stage": "development",
+  "protocol_hash": "aa3551b6b85b6074adcac1786f587a728a0d62fc3e041c4c4e6625b2d3be2fc0",
+  "code_commit": "51b2cec2e529a2ceb2ba0ba8f8b4664a3ca5015b",
+  "planned_runs": 63,
+  "frozen_run_matrix": [
+    {
+      "config": "configs/baselines/presets/uniform.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 11
+    },
+    {
+      "config": "configs/baselines/presets/uniform.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 22
+    },
+    {
+      "config": "configs/baselines/presets/uniform.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 33
+    },
+    {
+      "config": "configs/baselines/presets/uniform.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 11
+    },
+    {
+      "config": "configs/baselines/presets/uniform.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 22
+    },
+    {
+      "config": "configs/baselines/presets/uniform.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 33
+    },
+    {
+      "config": "configs/baselines/presets/uniform.json",
+      "scenario": "natural_homogeneous",
+      "seed": 11
+    },
+    {
+      "config": "configs/baselines/presets/uniform.json",
+      "scenario": "natural_homogeneous",
+      "seed": 22
+    },
+    {
+      "config": "configs/baselines/presets/uniform.json",
+      "scenario": "natural_homogeneous",
+      "seed": 33
+    },
+    {
+      "config": "configs/baselines/presets/fedprox-0.001.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 11
+    },
+    {
+      "config": "configs/baselines/presets/fedprox-0.001.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 22
+    },
+    {
+      "config": "configs/baselines/presets/fedprox-0.001.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 33
+    },
+    {
+      "config": "configs/baselines/presets/fedprox-0.001.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 11
+    },
+    {
+      "config": "configs/baselines/presets/fedprox-0.001.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 22
+    },
+    {
+      "config": "configs/baselines/presets/fedprox-0.001.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 33
+    },
+    {
+      "config": "configs/baselines/presets/fedprox-0.001.json",
+      "scenario": "natural_homogeneous",
+      "seed": 11
+    },
+    {
+      "config": "configs/baselines/presets/fedprox-0.001.json",
+      "scenario": "natural_homogeneous",
+      "seed": 22
+    },
+    {
+      "config": "configs/baselines/presets/fedprox-0.001.json",
+      "scenario": "natural_homogeneous",
+      "seed": 33
+    },
+    {
+      "config": "configs/baselines/presets/scaffold-1.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 11
+    },
+    {
+      "config": "configs/baselines/presets/scaffold-1.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 22
+    },
+    {
+      "config": "configs/baselines/presets/scaffold-1.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 33
+    },
+    {
+      "config": "configs/baselines/presets/scaffold-1.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 11
+    },
+    {
+      "config": "configs/baselines/presets/scaffold-1.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 22
+    },
+    {
+      "config": "configs/baselines/presets/scaffold-1.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 33
+    },
+    {
+      "config": "configs/baselines/presets/scaffold-1.json",
+      "scenario": "natural_homogeneous",
+      "seed": 11
+    },
+    {
+      "config": "configs/baselines/presets/scaffold-1.json",
+      "scenario": "natural_homogeneous",
+      "seed": 22
+    },
+    {
+      "config": "configs/baselines/presets/scaffold-1.json",
+      "scenario": "natural_homogeneous",
+      "seed": 33
+    },
+    {
+      "config": "configs/baselines/presets/round_robin.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 11
+    },
+    {
+      "config": "configs/baselines/presets/round_robin.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 22
+    },
+    {
+      "config": "configs/baselines/presets/round_robin.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 33
+    },
+    {
+      "config": "configs/baselines/presets/round_robin.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 11
+    },
+    {
+      "config": "configs/baselines/presets/round_robin.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 22
+    },
+    {
+      "config": "configs/baselines/presets/round_robin.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 33
+    },
+    {
+      "config": "configs/baselines/presets/round_robin.json",
+      "scenario": "natural_homogeneous",
+      "seed": 11
+    },
+    {
+      "config": "configs/baselines/presets/round_robin.json",
+      "scenario": "natural_homogeneous",
+      "seed": 22
+    },
+    {
+      "config": "configs/baselines/presets/round_robin.json",
+      "scenario": "natural_homogeneous",
+      "seed": 33
+    },
+    {
+      "config": "configs/baselines/presets/fast-0.5.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 11
+    },
+    {
+      "config": "configs/baselines/presets/fast-0.5.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 22
+    },
+    {
+      "config": "configs/baselines/presets/fast-0.5.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 33
+    },
+    {
+      "config": "configs/baselines/presets/fast-0.5.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 11
+    },
+    {
+      "config": "configs/baselines/presets/fast-0.5.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 22
+    },
+    {
+      "config": "configs/baselines/presets/fast-0.5.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 33
+    },
+    {
+      "config": "configs/baselines/presets/fast-0.5.json",
+      "scenario": "natural_homogeneous",
+      "seed": 11
+    },
+    {
+      "config": "configs/baselines/presets/fast-0.5.json",
+      "scenario": "natural_homogeneous",
+      "seed": 22
+    },
+    {
+      "config": "configs/baselines/presets/fast-0.5.json",
+      "scenario": "natural_homogeneous",
+      "seed": 33
+    },
+    {
+      "config": "configs/baselines/presets/oort-0.3-5-original.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 11
+    },
+    {
+      "config": "configs/baselines/presets/oort-0.3-5-original.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 22
+    },
+    {
+      "config": "configs/baselines/presets/oort-0.3-5-original.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 33
+    },
+    {
+      "config": "configs/baselines/presets/oort-0.3-5-original.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 11
+    },
+    {
+      "config": "configs/baselines/presets/oort-0.3-5-original.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 22
+    },
+    {
+      "config": "configs/baselines/presets/oort-0.3-5-original.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 33
+    },
+    {
+      "config": "configs/baselines/presets/oort-0.3-5-original.json",
+      "scenario": "natural_homogeneous",
+      "seed": 11
+    },
+    {
+      "config": "configs/baselines/presets/oort-0.3-5-original.json",
+      "scenario": "natural_homogeneous",
+      "seed": 22
+    },
+    {
+      "config": "configs/baselines/presets/oort-0.3-5-original.json",
+      "scenario": "natural_homogeneous",
+      "seed": 33
+    },
+    {
+      "config": "agents/ghj/configs/candidates/coverage-1-0.2.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 11
+    },
+    {
+      "config": "agents/ghj/configs/candidates/coverage-1-0.2.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 22
+    },
+    {
+      "config": "agents/ghj/configs/candidates/coverage-1-0.2.json",
+      "scenario": "near_iid_homogeneous",
+      "seed": 33
+    },
+    {
+      "config": "agents/ghj/configs/candidates/coverage-1-0.2.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 11
+    },
+    {
+      "config": "agents/ghj/configs/candidates/coverage-1-0.2.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 22
+    },
+    {
+      "config": "agents/ghj/configs/candidates/coverage-1-0.2.json",
+      "scenario": "near_iid_heterogeneous",
+      "seed": 33
+    },
+    {
+      "config": "agents/ghj/configs/candidates/coverage-1-0.2.json",
+      "scenario": "natural_homogeneous",
+      "seed": 11
+    },
+    {
+      "config": "agents/ghj/configs/candidates/coverage-1-0.2.json",
+      "scenario": "natural_homogeneous",
+      "seed": 22
+    },
+    {
+      "config": "agents/ghj/configs/candidates/coverage-1-0.2.json",
+      "scenario": "natural_homogeneous",
+      "seed": 33
+    }
+  ],
+  "budget_sim_seconds": 9.836224400345905,
+  "config_hashes": {
+    "agents/ghj/configs/candidates/coverage-1-0.2.json": "271c9beab213de035c4bb6ae73d2212aa75a8ed62d290042cedbd311309bd8bf",
+    "configs/baselines/presets/fast-0.5.json": "60d936f7808a82e9a767cb660ba906d838b9e64902d2a904931f57f6209dbdc1",
+    "configs/baselines/presets/fedprox-0.001.json": "29dca52bdb54218f79a745d81c2a7bc2b3c0f1759571480470effb226832d6ac",
+    "configs/baselines/presets/oort-0.3-5-original.json": "97c072aa030aa32031de8083e7fea559fb0db3391ca359ba8acb2c63b25dd231",
+    "configs/baselines/presets/round_robin.json": "ea1d16e21f3208d77968929419bd84347906ab136a7288c26349f3eac67f4233",
+    "configs/baselines/presets/scaffold-1.json": "84ec4b4fa0188291b8cf4adec54c27f311ea9ab7c54cc91841284f7cd717975b",
+    "configs/baselines/presets/uniform.json": "421924c74107d4546ea9390cd8ea8afe8ef91e0605da2ea73a726d0e940ca769"
+  },
+  "candidate_config_hash": "271c9beab213de035c4bb6ae73d2212aa75a8ed62d290042cedbd311309bd8bf"
+}
