@@ -18,6 +18,7 @@ PRESETS = "configs/baselines/presets"
 CANDIDATES = "agents/ghj/configs/candidates"
 BASELINE_FAMILIES = ["fedavg_u_uniform", "fedprox_u_uniform", "scaffold_uniform",
                      "fedavg_u_round_robin", "fedavg_u_fast_random", "fedavg_u_oort"]
+SEARCH_ID = "dev-search-v2"
 
 
 def initialize(root):
@@ -200,12 +201,12 @@ def register_search(root):
     rows = [{"config": p, "scenario": "natural_heterogeneous", "seed": seed}
             for p in search["baseline_configurations"] + search["candidate_configurations"]
             for seed in search["development_seeds"]]
-    print(freeze_campaign(root, "dev-search-v1", "development", rows))
+    print(freeze_campaign(root, SEARCH_ID, "development", rows))
 
 
 def select(root):
     search = load_json(root / "agents/ghj/configs/search.json")
-    frozen = load_json(root / "configs/final/dev-search-v1.json")
+    frozen = load_json(root / f"configs/final/{SEARCH_ID}.json")
     all_runs = published_records(root)
     evidence = []
     for path in search["baseline_configurations"] + search["candidate_configurations"]:
@@ -244,20 +245,20 @@ def select(root):
     rows = [{"config": p, "scenario": scenario, "seed": seed} for p in paths
             for scenario in config["scenarios"] if scenario != "natural_heterogeneous"
             for seed in search["development_seeds"]]
-    print(freeze_campaign(root, "dev-conditions-v1", "development", rows,
+    print(freeze_campaign(root, "dev-conditions-v2", "development", rows,
                           code_commit=frozen["code_commit"], candidate=candidate["config"]))
     rows = [{"config": p, "scenario": "natural_heterogeneous", "seed": seed}
             for p in [candidate["config"], strongest["config"]] for seed in search["development_seeds"]]
-    print(freeze_campaign(root, "confirmation-v1", "confirmation", rows,
+    print(freeze_campaign(root, "confirmation-v2", "confirmation", rows,
                           code_commit=frozen["code_commit"], candidate=candidate["config"]))
 
 
 def final(root):
     selected = load_json(root / "agents/ghj/SELECTION.json")
-    confirmation = load_json(root / "configs/final/confirmation-v1.json")
+    confirmation = load_json(root / "configs/final/confirmation-v2.json")
     records = {r["run_id"]: r for r in published_records(root)}
     for index in range(confirmation["planned_runs"]):
-        record = records.get(f"ghj-confirmation-v1-{index + 1:03d}")
+        record = records.get(f"ghj-confirmation-v2-{index + 1:03d}")
         if not record or record["status"] != "complete":
             raise ValueError("The one-shot confirmation campaign is incomplete.")
     config = load_json(root / CONFIG)
@@ -275,13 +276,79 @@ def final(root):
     rows += [{"config": f"{PRESETS}/weighted.json", "scenario": "natural_heterogeneous", "seed": seed} for seed in seeds]
     if len(rows) != 175:
         raise ValueError("Core matrix must contain exactly 175 distinct runs.")
-    print(freeze_campaign(root, "core-final-v1", "test", rows, kind="core",
+    print(freeze_campaign(root, "core-final-v2", "test", rows, kind="core",
                           code_commit=selected["code_commit"], candidate=candidate))
+
+
+def recalibrate_overheads(root):
+    """Correct omitted optimizer/serialization overheads before reserved evaluation."""
+    import torch
+    from benchmark.accounting import encode_message, decode_message
+    from benchmark.data import load_prepared
+    from benchmark.model import build_model
+    from benchmark.trainer import train_local, aggregate_equal
+    from benchmark.simulator import scaffold_controls
+
+    commit = source_commit(root)
+    config, costs = load_json(root / CONFIG), load_json(root / COST)
+    if config["protocol_version"] != "hapt-v2-ghj-cpu":
+        raise ValueError("This explicit migration only applies to the retained v2 calibration.")
+    configure_cpu_runtime(root, 11)
+    dataset = load_prepared(root, scenario="natural_heterogeneous", seed=11)
+    model = build_model(config)
+    proximal_samples = {}
+    for mu in (0.001, 0.01, 0.1, 1.0):
+        measurements = []
+        for client in sorted(dataset.train)[::3]:
+            generator = torch.Generator().manual_seed(90000 + client)
+            current = copy.deepcopy(model)
+            train_local(current, dataset.train[client], generator, config, proximal_mu=mu)
+            for _ in range(3):
+                measurements += train_local(current, dataset.train[client], generator, config,
+                                            proximal_mu=mu)["step_seconds"]
+        proximal_samples[str(mu)] = measurements
+    state = {k: v.detach().clone() for k, v in model.state_dict().items()}
+    zero = {k: torch.zeros_like(v) for k, v in state.items()}
+    larger = {**state, **{"control::" + k: v for k, v in zero.items()}}
+    server_samples, deltas = [], []
+    for _ in range(60):
+        started = time.perf_counter()
+        updates = []
+        for client in range(6):
+            received = decode_message(encode_message(larger, {"client_id": client, "role": "download"}))
+            updated, delta = scaffold_controls(state, state, zero, zero, 4,
+                                               config["training"]["initial_learning_rate"])
+            upload = {**state, **{"control::" + k: v for k, v in delta.items()}}
+            decoded = decode_message(encode_message(upload, {"client_id": client, "role": "upload",
+                                                            "loss": 0.1, "loss_rms": 0.2, "steps": 4}))
+            updates.append({k: decoded["state_dict"][k] for k in state})
+        aggregate_equal(updates)
+        aggregate_equal([zero] * 6)
+        server_samples.append(time.perf_counter() - started)
+        deltas.append(max(0.0, server_samples[-1] - costs["server_round_seconds"]))
+    costs["fedprox_train_step_seconds"] = {k: max(costs["reference_train_step_seconds"], statistics.median(v))
+                                           for k, v in proximal_samples.items()}
+    costs["scaffold_server_extra_seconds"] = statistics.median(deltas)
+    costs["scaffold_train_step_seconds"] = max(costs["reference_train_step_seconds"], costs["scaffold_train_step_seconds"])
+    evidence = {"profiling_code_commit": commit, "correction": "Explicit FedProx per-mu training cost and SCAFFOLD extra tensor serialization/control server cost; applied before confirmation or test.",
+                "parent_profile": "docs/validation/ghj-research-profile.json",
+                "parent_profile_sha256": file_hash(root / "docs/validation/ghj-research-profile.json"),
+                "fedprox_step_samples": proximal_samples, "scaffold_total_server_samples": server_samples,
+                "scaffold_extra_server_samples": deltas, "cost_coefficients": copy.deepcopy(costs),
+                "baseline_B_and_learning_rate_unchanged": True,
+                "old_campaign": "dev-search-v1", "old_results_retained_not_compared": True}
+    path = root / "docs/validation/ghj-overheads-v2.json"
+    write_json(path, evidence)
+    costs.update(version="cost-v2-ghj-all-optimizers", evidence_uri=path.relative_to(root).as_posix(),
+                 evidence_sha256=file_hash(path))
+    write_json(root / COST, costs)
+    config["protocol_version"] = "hapt-v3-ghj-costs"
+    write_json(root / CONFIG, config)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=["initialize", "profile", "register-search", "select", "freeze-final"])
+    parser.add_argument("command", choices=["initialize", "profile", "recalibrate-overheads", "register-search", "select", "freeze-final"])
     args = parser.parse_args()
     root = find_root()
     errors = environment_errors(root)
@@ -289,7 +356,7 @@ def main():
         raise ValueError("Environment mismatch: " + "; ".join(errors))
     configure_cpu_runtime(root, 11)
     {"initialize": initialize, "profile": profile, "register-search": register_search,
-     "select": select, "freeze-final": final}[args.command](root)
+     "recalibrate-overheads": recalibrate_overheads, "select": select, "freeze-final": final}[args.command](root)
 
 
 if __name__ == "__main__":

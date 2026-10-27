@@ -182,6 +182,10 @@ def run_experiment(root: Path, config, dataset, policy, cost_model, *, seed=11,
             effective_cost["server_round_seconds"] += cost_model.get("scaffold_server_extra_seconds", 0.0)
             effective_cost["reference_train_step_seconds"] = cost_model.get(
                 "scaffold_train_step_seconds", cost_model["reference_train_step_seconds"])
+        elif proximal_mu:
+            effective_cost["reference_train_step_seconds"] = cost_model.get(
+                "fedprox_train_step_seconds", {}).get(str(float(proximal_mu)),
+                                                     cost_model["reference_train_step_seconds"])
         cost = measure_round_cost(config, [by_id[c] for c in ordered], message_sizes, effective_cost)
         # Record last completed model at each preregistered time point; no score enters policy.
         if capture_curve:

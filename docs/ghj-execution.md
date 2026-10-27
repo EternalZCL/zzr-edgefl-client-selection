@@ -18,12 +18,12 @@ uv run --locked --exact python scripts/sync_leaderboard.py
 uv run --locked --exact python scripts/check_repo.py --require-ready
 # 提交校准后的冻结协议和全部研究代码
 uv run --locked --exact python -m flbench.planning register-search
-uv run --locked --exact python scripts/research.py campaign configs/final/dev-search-v1.json
+uv run --locked --exact python scripts/research.py campaign configs/final/dev-search-v2.json
 uv run --locked --exact python -m flbench.planning select
-uv run --locked --exact python scripts/research.py campaign configs/final/dev-conditions-v1.json
-uv run --locked --exact python scripts/research.py campaign configs/final/confirmation-v1.json
+uv run --locked --exact python scripts/research.py campaign configs/final/dev-conditions-v2.json
+uv run --locked --exact python scripts/research.py campaign configs/final/confirmation-v2.json
 uv run --locked --exact python -m flbench.planning freeze-final
-uv run --locked --exact python scripts/research.py campaign configs/final/core-final-v1.json
+uv run --locked --exact python scripts/research.py campaign configs/final/core-final-v2.json
 ```
 
 开发搜索 81 次：21 组基线和 6 组候选，各 3 个种子；选中 7 个方法的另外 3 条件验证 63 次；确认 6 次；正式 175 次。另保留 36 次校准，不把它们混算正式结果。开发搜索的基线调参最多 8 组/方法，所有正负结果同等保留。

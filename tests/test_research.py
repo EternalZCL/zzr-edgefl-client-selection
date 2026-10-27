@@ -93,6 +93,13 @@ class ResearchCorrectnessTests(unittest.TestCase):
         actual = aggregate_equal([{"w": torch.tensor([1.0])}, {"w": torch.tensor([5.0])}], [1, 3])
         self.assertEqual(actual["w"].item(), 4.0)
 
+    def test_optimizer_specific_step_cost_is_charged(self):
+        regular = run_experiment(ROOT, self.config, self.dataset, UniformPolicy(11), self.costs, max_rounds=3)
+        self.costs["fedprox_train_step_seconds"] = {"0.1": self.costs["reference_train_step_seconds"] * 2}
+        proximal = run_experiment(ROOT, self.config, self.dataset, UniformPolicy(11), self.costs,
+                                  max_rounds=3, proximal_mu=0.1)
+        self.assertGreater(proximal["summary"]["sim_seconds_used"], regular["summary"]["sim_seconds_used"])
+
     def test_checkpoint_rejects_changed_policy_parameters(self):
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / "checkpoint.pt"

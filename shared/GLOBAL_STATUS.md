@@ -7,14 +7,14 @@
 - 协议状态：`frozen`
 - 统一环境：uv `0.12.23` / CPython `3.11.17` / `cpu-v1`；每份 checkout 独立 `.venv`。
 - 模拟预算 B：`9.836224400345905`（null 表示尚未标定）
-- 已发布终态记录：0；可入开发主榜的方法组：0。
+- 已发布终态记录：38；可入开发主榜的方法组：0。
 - Champion 指针见 CHAMPION_DEV.json / CHAMPION_FINAL.json；初始为空。
 
 | 工作区 | 已发布记录 | 成功 | 失败/超时/无效 | 交接入口 |
 | --- | --- | --- | --- | --- |
 | zzr | 0 | 0 | 0 | [HANDOFF](../agents/zzr/HANDOFF.md) |
 | zzw | 0 | 0 | 0 | [HANDOFF](../agents/zzw/HANDOFF.md) |
-| ghj | 0 | 0 | 0 | [HANDOFF](../agents/ghj/HANDOFF.md) |
+| ghj | 38 | 37 | 1 | [HANDOFF](../agents/ghj/HANDOFF.md) |
 | xyk | 0 | 0 | 0 | [HANDOFF](../agents/xyk/HANDOFF.md) |
 
 ## 尚未满足的就绪条件
