@@ -8,12 +8,14 @@ The original design is in `docs/project-plan.md`; executable capabilities are do
 
 ## Current phase and scope
 
-- Current phase is **bootstrap**: audited HAPT caches and a short FedAvg/FedProx development pipeline
-  are available. Research budget/cost calibration, strong remaining baselines and final campaigns are pending.
+- This branch contains ghj's calibrated research pipeline: all baselines, references, full-budget
+  campaigns and reserved-stage gates are implemented. Read agents/ghj/HANDOFF.md and COMPLETION.json
+  (when present) for actual executed activity; the protocol's phase field stays frozen for hash stability.
 - Validate the full development loop with `uv run --locked --exact python scripts/validate_pipeline.py --prepare`.
   Round-capped infrastructure results never enter the scientific leaderboard.
-- Infrastructure changes are allowed during bootstrap when needed for the user's task. Do not claim
-  that draft settings are frozen or that a scaffold check validates scientific correctness.
+- The current study's code, costs and method configurations are frozen. Shared-core changes require
+  a protocol revision and rerunning affected controls; never retune from confirmation/test outcomes.
+  A readiness check does not replace scientific evidence or another member's review.
 - During candidate search, modify your own `agents/<name>/` directory. Propose shared-core changes
   separately; increment protocol version and rerun affected baselines before comparing results.
 - There are four peer workspaces (`zzr`, `zzw`, `ghj`, `xyk`), with no permanent research assignments.
