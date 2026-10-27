@@ -151,7 +151,8 @@ class RepositoryWorkflowTests(unittest.TestCase):
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory()
         self.addCleanup(self.temporary.cleanup)
-        self.root = Path(self.temporary.name) / "repo"
+        # find_root() resolves the production root; Windows TEMP can use an 8.3 alias.
+        self.root = (Path(self.temporary.name) / "repo").resolve()
         shutil.copytree(ROOT, self.root, ignore=shutil.ignore_patterns(
             ".git", "__pycache__", ".venv", "artifacts", "*.egg-info", "hapt", "hapt-v1"))
         # Workflow fixtures start empty even after the real repository has published runs.
