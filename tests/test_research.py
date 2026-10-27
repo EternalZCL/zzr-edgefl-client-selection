@@ -15,6 +15,7 @@ from benchmark.interfaces import BudgetState, ClientHistory, ClientInfo, RoundFe
 from benchmark.simulator import run_experiment, scaffold_controls
 from benchmark.trainer import aggregate_equal, train_local
 from benchmark.model import build_model
+from benchmark.data import load_prepared
 from flbench.environment import configure_cpu_runtime
 
 import torch
@@ -91,6 +92,34 @@ class ResearchCorrectnessTests(unittest.TestCase):
     def test_weighted_fedavg_matches_analytic_average(self):
         actual = aggregate_equal([{"w": torch.tensor([1.0])}, {"w": torch.tensor([5.0])}], [1, 3])
         self.assertEqual(actual["w"].item(), 4.0)
+
+    def test_checkpoint_rejects_changed_policy_parameters(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "checkpoint.pt"
+            run_experiment(ROOT, self.config, self.dataset, FastRandomPolicy(11, 0.2), self.costs,
+                           max_rounds=2, checkpoint_path=path)
+            with self.assertRaisesRegex(ValueError, "identity"):
+                run_experiment(ROOT, self.config, self.dataset, FastRandomPolicy(11, 0.5), self.costs,
+                               max_rounds=4, resume_from=path)
+
+    def test_reserved_loader_rejects_unfrozen_or_wrong_protocol_campaign(self):
+        for access in ({"status": "draft"}, {"status": "frozen", "stage": "test", "protocol_hash": "0" * 64}):
+            with self.subTest(access=access), tempfile.TemporaryDirectory() as folder:
+                path = Path(folder) / "campaign.json"
+                path.write_text(json.dumps(access), encoding="utf-8")
+                with self.assertRaisesRegex(ValueError, "not frozen"):
+                    load_prepared(ROOT, scenario="natural_heterogeneous", evaluation_stage="test", campaign=path)
+
+    def test_single_client_zero_controls_scaffold_matches_fedavg(self):
+        data = copy.copy(self.dataset)
+        data.train = {1: self.dataset.train[1]}
+        data.validation = {1: self.dataset.validation[1]}
+        data.manifest = {"content_sha256": "b" * 64, "split_contract": {"search_validation_clients": [1]}}
+        baseline = run_experiment(ROOT, self.config, data, UniformPolicy(11), self.costs, max_rounds=1)
+        controlled = run_experiment(ROOT, self.config, data, UniformPolicy(11), self.costs,
+                                    max_rounds=1, scaffold=True)
+        for k, v in baseline["state"]["model"].items():
+            torch.testing.assert_close(v, controlled["state"]["model"][k], atol=1e-7, rtol=1e-6)
 
     def test_rr_cycle_and_zero_exploration_fastest(self):
         clients = [ClientInfo(i, 20, 1 if i < 10 else 16) for i in range(30)]
