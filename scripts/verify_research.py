@@ -48,6 +48,8 @@ if __name__ == "__main__":
         'all_client_controls_bitwise_equal':all(torch.equal(v,state['client_controls'][c][k])
             for c,control in original['client_controls'].items() for k,v in control.items()),
         'client_rng_exact':all(torch.equal(v,state['client_rng'][c]) for c,v in original['client_rng'].items()),
+        'global_rng_exact':torch.equal(original['torch_rng'],state['torch_rng'])
+            and original['python_rng']==state['python_rng'] and original['numpy_rng']==state['numpy_rng'],
         'trace_exact':original['logs']==state['logs'],
         'histories_exact':original['histories']==state['histories'],
         'policy_exact':original['policy']==state['policy'],

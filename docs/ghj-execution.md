@@ -14,6 +14,8 @@ uv run --locked --exact python -m unittest discover -s tests -v
 uv run --locked --exact python -m flbench.planning initialize
 # 提交初始代码和预注册参数
 uv run --locked --exact python -m flbench.planning profile
+# 提交原始校准证据；在已实现成本修订的代码上补测所有优化器开销
+uv run --locked --exact python -m flbench.planning recalibrate-overheads
 uv run --locked --exact python scripts/sync_leaderboard.py
 uv run --locked --exact python scripts/check_repo.py --require-ready
 # 提交校准后的冻结协议和全部研究代码
@@ -27,6 +29,8 @@ uv run --locked --exact python scripts/research.py campaign configs/final/core-f
 ```
 
 开发搜索 81 次：21 组基线和 6 组候选，各 3 个种子；选中 7 个方法的另外 3 条件验证 63 次；确认 6 次；正式 175 次。另保留 36 次校准，不把它们混算正式结果。开发搜索的基线调参最多 8 组/方法，所有正负结果同等保留。
+
+历史初版活动dev-search-v1保留37个完成摘要和1个invalid中断。它们属于旧成本协议，不与修订活动比较。当前研究的正式源码为51b2cec2e529a2ceb2ba0ba8f8b4664a3ca5015b；正式矩阵在7c13a26提交中预注册，之后才打开测试集。只复现现有研究时，不重新执行校准或选择步骤。
 
 恢复执行同一个 campaign 命令会跳过已发布记录，未终态 run 从每 50 轮保存的 checkpoint 恢复。失败终态不会覆盖，应诊断后用新活动/记录并保留原失败。单次结果可运行：
 

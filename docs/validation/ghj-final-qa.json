@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "verified_at_utc": "2026-10-27T05:45:07.249086+00:00",
+  "environment": "uv 0.12.23 / CPython 3.11.17 / cpu-v1 / locked exact checkout .venv",
+  "unittest": {
+    "checks": 41,
+    "status": "passed",
+    "command": "python -m unittest discover -s tests -v"
+  },
+  "real_hapt_pipeline": {
+    "checks": 16,
+    "status": "passed",
+    "command": "python scripts/validate_pipeline.py --offline"
+  },
+  "real_scaffold_recovery": "docs/validation/ghj-final-recovery.json",
+  "check_repo_require_ready": "passed",
+  "sync_leaderboard_check": "passed",
+  "artifact_checksums_verified": 372,
+  "pdf": {
+    "pages": 8,
+    "all_pages_visually_reviewed": true,
+    "replacement_characters_in_extracted_text": 0,
+    "sha256": "35b3de3aadb0b6fa13a2317ca59a4051ccf2d371b52d77e36217228fd5f551f9"
+  },
+  "protocol_hash": "aa3551b6b85b6074adcac1786f587a728a0d62fc3e041c4c4e6625b2d3be2fc0"
+}

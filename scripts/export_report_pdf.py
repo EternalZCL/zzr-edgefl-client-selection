@@ -122,7 +122,9 @@ while index < len(lines):
     while index < len(lines) and lines[index].strip() and not lines[index].startswith(("## ","| ","![")):
         paragraph.append(lines[index].strip())
         index += 1
-    story.append(Paragraph(clean(" ".join(paragraph)), body))
+    paragraph_text = " ".join(paragraph)
+    paragraph_style = ParagraphStyle("TableLead", parent=body, keepWithNext=True) if paragraph_text.endswith("：") else body
+    story.append(Paragraph(clean(paragraph_text), paragraph_style))
 
 destination=out / "研究报告.pdf"
 doc=SimpleDocTemplate(str(destination), pagesize=A4, leftMargin=margin, rightMargin=margin,

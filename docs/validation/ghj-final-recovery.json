@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "source_run_id": "ghj-core-final-v2-056",
+  "purpose": "post-freeze deterministic recovery verification; not an extra independent test seed",
+  "code_commit": "51b2cec2e529a2ceb2ba0ba8f8b4664a3ca5015b",
+  "protocol_hash": "aa3551b6b85b6074adcac1786f587a728a0d62fc3e041c4c4e6625b2d3be2fc0",
+  "checks": {
+    "model_bitwise_equal": true,
+    "server_control_bitwise_equal": true,
+    "all_client_controls_bitwise_equal": true,
+    "client_rng_exact": true,
+    "global_rng_exact": true,
+    "trace_exact": true,
+    "histories_exact": true,
+    "policy_exact": true,
+    "budget_and_messages_exact": true,
+    "identity_exact": true
+  },
+  "resume_round": 70,
+  "completed_rounds": 145,
+  "verification_script_sha256": "52d4a7438cd896ffa82b501c41b781a6cfad4980ad3281357a2be8b2d652e841",
+  "source_artifact_sha256": "ec702f162b87f74f09810a5b62f72e1b680892646bccfa2e4ce9e2830e15dc90"
+}

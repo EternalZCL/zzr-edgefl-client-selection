@@ -4,9 +4,13 @@
 
 共享实现已包含真实 HAPT 数据审计、完整基线、实测成本校准、全预算开发/确认/正式矩阵、等更新数诊断、不可变记录和检查点恢复。实际完成数量、冻结候选、结论和远端协作状态以 [ghj 交接](agents/ghj/HANDOFF.md)、[研究日志](agents/ghj/RESEARCH.md) 与生成的共享状态为准。
 
+本次核心正式矩阵已完成175/175次；[中文报告与六类图表](docs/ghj-study/研究报告.md)、[机器完成摘要](agents/ghj/COMPLETION.json)、[完整交付与恢复说明](docs/ghj-delivery.md)可直接审阅。主条件候选相对预选SCAFFOLD的配对差为-.006987，未证实优势；完整负结果保留。远端上传及团队审阅状态单独记录，不等同本地完成。
+
 ## 开始与复现
 
 全员使用 uv **0.12.23**、CPython **3.11.17**、checkout 独立 `.venv`，不改变已提交依赖锁。首次 clone：
+
+本机全局uv版本不同时，可将命令开头的`uv`替换成`uv tool run --from uv==0.12.23 uv`，使用隔离工具缓存中的正确版本，无需修改全局uv或实验依赖。本会话使用的就是此方式。
 
 ```powershell
 uv sync --locked
@@ -25,6 +29,14 @@ uv run --locked --exact python scripts/research.py campaign configs/final/core-f
 ```
 
 已发布终态不覆盖；重复执行会跳过现有终态，未完成运行从原子检查点恢复。新机器使用冻结配置与原参考成本；重新实测成本意味着新协议。详细阶段顺序、单次运行与恢复见 [执行说明](docs/ghj-execution.md)。
+
+要实际重训全部175行而保留原摘要，使用新的复现活动ID：
+
+```powershell
+uv run --locked --exact python scripts/replay_campaign.py --replicate-id core-final-replay-v1
+```
+
+它只复制原冻结矩阵并更换记录ID，不能改变方法或种子，复现结果不能冒充更多独立重复。
 
 ## 科学协议
 
